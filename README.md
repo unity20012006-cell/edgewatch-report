@@ -19,7 +19,7 @@ Docente: Sanchez Seña, Alberto Wilmer
 |------------|-------------------|------------------| 
 | u20241b962 | Navarro Aldoradin | Carolina Celeste |
 | u202315628 |    Alvarez Falen  | Esteban Valentino|
-|            |                   |                  |
+| u20221b734 |  Vasquez Laos     | Sebastian Andrews|
 |            |                   |                  |
 |            |                   |                  |
 
