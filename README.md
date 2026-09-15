@@ -305,7 +305,7 @@ A continuación se enumeran las creencias resultantes de la sesión de discusió
 1. Creemos que existe en el Perú un número suficiente de empresas de servicio especializado en recubrimiento HVOF y de plantas industriales con línea propia como para sostener un modelo de suscripción B2B.
 2. Creemos que la presión por trazabilidad proviene del cliente final (minera) y se transfiere contractualmente al proveedor de recubrimiento, lo que convierte la evidencia de proceso en un requisito comercial y no en una mejora opcional.
 3. Creemos que las empresas del segmento están dispuestas a pagar una suscripción mensual por equipo monitoreado, siempre que el costo sea marginal frente al costo de una parada no planificada.
-4. Creemos que WebRunners puede construir y operar la plataforma con tecnologías open source (Spring Boot, Angular, PostgreSQL) sin incurrir en costos de licenciamiento que comprometan el margen.
+4. Creemos que WebRunners puede construir y operar la plataforma con tecnologías open source (.NET, Vue, MySQL) sin incurrir en costos de licenciamiento que comprometan el margen.
 5. Creemos que la integración con el equipo HVOF puede realizarse mediante un gateway que exponga la telemetría vía API REST, sin requerir modificar el PLC ni el software del fabricante del equipo.
 6. Creemos que el conocimiento del dominio industrial que posee el equipo constituye una barrera de entrada frente a competidores de software genérico de mantenimiento.
 
@@ -2004,13 +2004,11 @@ classDef person fill:#08427B,stroke:#052E56,color:#FFFFFF
 Usuario["Ingeniero de Calidad /\nJefe de Mantenimiento"]:::person
 
 subgraph EW["EdgeWatch"]
-  LP["Landing Page\n[Angular, estático]"]:::container
-  SPA["Web Application\n[Angular SPA]"]:::container
-  API["REST API\n[Spring Boot]"]:::container
-  ING["Servicio de Ingesta\nde Telemetría [Spring Boot]"]:::container
-  DB[("Base de Datos\n[PostgreSQL]")]:::container
+  LP["Landing Page\n[Vue, estático]"]:::container
+  SPA["Web Application\n[Vue SPA]"]:::container
+  API["REST API\n[.NET 8 / ASP.NET Core]"]:::container
+  DB[("Base de Datos\n[MySQL]")]:::container
   FILES[("Almacenamiento de Certificados\n[Object Storage]")]:::container
-  NOTIFSVC["Servicio de Notificaciones\n[Spring Boot]"]:::container
 end
 
 PLC["Gateway PLC HVOF"]:::external
@@ -2022,12 +2020,11 @@ SPA -->|"JSON / HTTPS"| API
 LP -->|"envía formulario de demo"| API
 API -->|"SQL"| DB
 API -->|"lee / escribe certificados"| FILES
-PLC -->|"telemetría JSON / HTTPS"| ING
-ING -->|"SQL"| DB
-ING -->|"publica desviación detectada"| API
-API -->|"solicita envío"| NOTIFSVC
-NOTIFSVC -->|"API"| EMAILSMS
+PLC -->|"telemetría JSON / HTTPS"| API
+API -->|"solicita envío de alerta"| EMAILSMS
 ```
+
+El sistema se implementa como una única REST API modular en lugar de microservicios separados: la ingesta de telemetría y el envío de notificaciones son módulos internos de ese mismo contenedor (ver componentes en 4.6.4), no servicios desplegables aparte, lo que simplifica la operación al reducir el despliegue a un solo backend.
 
 ### 4.6.4. Software Architecture Components Diagrams.
 
@@ -2038,7 +2035,7 @@ flowchart TB
 classDef component fill:#85BBF0,stroke:#5D82A8,color:#000000
 classDef external fill:#999999,stroke:#6B6B6B,color:#FFFFFF
 
-subgraph API["REST API [Spring Boot]"]
+subgraph API["REST API [.NET 8 / ASP.NET Core]"]
   SessionCtrl["SessionController"]:::component
   AlertCtrl["AlertController"]:::component
   DiagCtrl["DiagnosticController"]:::component
@@ -2061,7 +2058,7 @@ subgraph API["REST API [Spring Boot]"]
   NotifPublisher["NotificationPublisher"]:::component
 end
 
-DB[("PostgreSQL")]:::external
+DB[("MySQL")]:::external
 NOTIF["Servicio de Notificaciones"]:::external
 
 SessionCtrl --> SessionApp --> SessionRepo --> DB
@@ -2207,7 +2204,7 @@ UserAccount "1" --> "*" Alert : atiende
 
 ### 4.8.1. Database Diagrams.
 
-El modelo relacional se despliega sobre PostgreSQL y refleja de forma directa el diagrama de clases de 4.7.1, con tablas puente derivadas de las relaciones muchos-a-muchos implícitas en el dominio.
+El modelo relacional se despliega sobre MySQL y refleja de forma directa el diagrama de clases de 4.7.1, con tablas puente derivadas de las relaciones muchos-a-muchos implícitas en el dominio.
 
 ```mermaid
 erDiagram
@@ -2346,10 +2343,179 @@ erDiagram
 
 # Capítulo V: Product Implementation, Validation & Deployment
 ## 5.1. Software Configuration Management.
+
+La configuración de EdgeWatch se organiza alrededor de los contenedores definidos en el diagrama de arquitectura (4.6.3): Landing Page y Web Application en Vue, hosteadas en Firebase Hosting, y una única REST API en C# / ASP.NET Core que concentra la ingesta de telemetría y el envío de notificaciones como módulos internos, respaldada por una base de datos MySQL.  Esta sección documenta el entorno de desarrollo, el control de versiones, las convenciones de código y el esquema de despliegue que sostienen la implementación descrita en 5.2.
+
 ### 5.1.1. Software Development Environment Configuration.
+
+**Herramientas y versiones**
+
+| Componente | Herramienta | Versión |
+|---|---|---|
+| Backend (REST API) | .NET SDK | 8.0 LTS |
+| Backend | ASP.NET Core | 8.0 |
+| Backend | Entity Framework Core + Pomelo.EntityFrameworkCore.MySql | 8.0.x |
+| Frontend (Landing Page, Web Application) | HTML/CSS3/JavaScript / Node JS | 20 LTS |
+| Frontend | Vue | 3.5.x (build global vía CDN, sin compilador de SFC) |
+| Frontend | Firebase CLI | 13.x |
+| Base de datos | MySQL Server (Community) | 8.0.x |
+| IDE backend | Visual Studio 2022 / JetBrains Rider | — |
+| IDE frontend | Visual Studio Code + extensión ESLint / JetBrains WebStorm | — |
+| Cliente de API | Postman | — |
+| Cliente de base de datos | MySQL Workbench | — |
+
+**Orquestación local**
+
+Cada integrante instala MySQL Server de forma nativa en su máquina (o usa una instancia de desarrollo en Azure Database for MySQL, ver 5.1.4) y ejecuta el backend directamente con `dotnet watch run`. El frontend se sirve aparte con `npm start`, ya que en producción no corre como proceso propio sino en Firebase Hosting (ver 5.1.4).
+
+```mermaid
+flowchart LR
+classDef svc fill:#438DD5,stroke:#2E6295,color:#FFFFFF
+classDef db fill:#2E7D32,stroke:#1B5E20,color:#FFFFFF
+
+DEV["Máquina del desarrollador"] --> RUN["dotnet watch run\n(perfil Development)"]
+RUN --> API["REST API\n:8080"]:::svc
+API --> MYSQL[("MySQL Server\n:3306, instalación nativa")]:::db
+FE["npm start (node server.js)\n(Landing Page / Web App)\n:3000"] -->|"fetch /api"| API
+```
+
+**Gestión de configuración y secretos**
+
+| Mecanismo | Uso |
+|---|---|
+| `appsettings.json` + `appsettings.{Environment}.json` (`Development`, `Staging`, `Production`) | Configuración por entorno del backend (cadena de conexión a MySQL, niveles de log, credenciales de Mailchimp/proveedor de email) |
+| `dotnet user-secrets` | Secretos del backend en desarrollo local (cadena de conexión real, API key de Mailchimp), fuera del control de versiones y sin depender de un archivo `.env` |
+| `config.js` por entorno (plantilla `config.example.js` versionada) | Define `window.APP_CONFIG` con la URL base de la API y flags de features; se carga con `<script src="config.js">` antes de `app.js`. No contiene secretos: el frontend no tiene paso de build ni acceso a variables de entorno del sistema operativo |
+| `firebase.json` / `.firebaserc` (versionados) | Configuración de *hosting* de Firebase: directorio público, *rewrites* de SPA para la Web Application, proyecto por entorno (`edgewatch-staging`, `edgewatch-prod`) |
+| Application Settings de Azure App Service | Variables de entorno de producción (cadena de conexión, credenciales), inyectadas por el pipeline sin quedar escritas en `appsettings.Production.json` |
+| GitHub Actions Secrets | Credenciales inyectadas en CI/CD (ver 5.1.4): cadena de conexión de producción, clave de cuenta de servicio de Firebase, credenciales de publicación de Azure |
+
+Ningún valor de credencial se commitea: los `appsettings.{Environment}.json` con datos reales quedan excluidos vía `.gitignore`, los secretos locales del backend viven en el almacén de `dotnet user-secrets` (fuera del repositorio) y las claves de servicio externo se inyectan solo en tiempo de ejecución, siguiendo la mitigación de exposición de datos descrita en el análisis de amenazas (2.1.2).
+
 ### 5.1.2. Source Code Management.
+
+**Repositorios**
+
+El proyecto se distribuye en repositorios independientes dentro de la organización de GitHub `upc-pre-202620-1asi0730-16712-wrunners`, uno por contenedor de despliegue, de modo que cada superficie pueda desplegarse y versionarse de forma autónoma:
+
+| Repositorio | Contenido | Corresponde a |
+|---|---|---|
+| `edgewatch-report` | Este informe | — |
+| `edgewatch-landing-page` | Sitio estático Vue (4.3, 4.4) | Landing Page |
+| `edgewatch-webapp` | SPA Vue de la Web Application (4.4) | Web Application |
+| `edgewatch-platform-services` | Solución .NET (`WebRunners.EdgeWatch.sln`) con un único proyecto Web API (`WebRunners.EdgeWatch.Api`), organizado internamente por feature folders (5.1.3), que concentra la ingesta de telemetría y las notificaciones como módulos junto al resto del dominio de 4.7.1 | REST API (incluye ingesta y notificaciones) |
+
+**Estrategia de ramas**
+
+Se adopta Gitflow simplificado, la misma convención ya usada en `edgewatch-report` (ramas `feature/*` fusionadas a `develop`, y `develop` a `main`), replicada en los repositorios de código:
+
+```mermaid
+flowchart LR
+classDef rama fill:#90CAF9,stroke:#1565C0,color:#000000
+classDef prod fill:#C62828,stroke:#8E0000,color:#FFFFFF
+
+MAIN["main\n(producción, taggeado por versión)"]:::prod
+DEVELOP["develop\n(integración continua)"]:::rama
+FEATURE["feature/US19-inicio-sesion-rociado"]:::rama
+RELEASE["release/1.2.0"]:::rama
+HOTFIX["hotfix/fix-calculo-pcr"]:::rama
+
+FEATURE -->|"Pull Request + review"| DEVELOP
+DEVELOP -->|"fin de sprint"| RELEASE
+RELEASE -->|"QA aprobado"| MAIN
+MAIN -->|"bug crítico en producción"| HOTFIX
+HOTFIX --> MAIN
+HOTFIX --> DEVELOP
+```
+
+| Rama | Propósito | Regla |
+|---|---|---|
+| `main` | Código en producción | Solo recibe merges desde `release/*` o `hotfix/*`; cada merge se etiqueta con SemVer (`vMAJOR.MINOR.PATCH`) |
+| `develop` | Integración de features del sprint en curso | Rama por defecto para nuevas `feature/*`; debe mantenerse siempre desplegable a *staging* |
+| `feature/<US o TS-id>-<slug>` | Una historia de usuario o técnica del Product Backlog (3.3) | Nace de `develop`, se elimina al fusionarse; el id (p. ej. `US19`, `TS10`) trazabiliza el commit al backlog |
+| `release/<version>` | Estabilización previa a producción | Solo admite correcciones menores, no nuevas features |
+| `hotfix/<slug>` | Corrección urgente sobre `main` | Se fusiona a `main` y a `develop` simultáneamente |
+
+**Convención de commits y Pull Requests**
+
+Se usa Conventional Commits, ya aplicado en el historial de este informe (`feat(chapter-iii): ...`, `docs: ...`): `<tipo>(<alcance>): <descripción>`, con tipos `feat`, `fix`, `refactor`, `test`, `docs`, `chore`. Toda Pull Request hacia `develop` referencia el id de la User Story o Technical Story (p. ej. `Closes US19`), requiere al menos una aprobación de otro integrante y que la GitHub Action de build/test (5.1.4) pase en verde antes del merge, que se realiza en modalidad *squash* para mantener el historial de `develop` legible por historia.
+
 ### 5.1.3. Source Code Style Guide & Conventions.
+
+**Backend (C# / ASP.NET Core)**
+
+| Aspecto | Convención |
+|---|---|
+| Guía base | Microsoft C# Coding Conventions, forzadas con `.editorconfig` compartido entre proyectos y verificadas en el build con `dotnet format --verify-no-changes` |
+| Organización de namespaces | *Feature folders* alineados a los bounded contexts del Event Storming (4.6.1): `WebRunners.EdgeWatch.Sessions`, `.Alerts`, `.Diagnostics`, `.Certificates`, `.Pcr` |
+| Arquitectura por módulo | Capas `Api` (controllers, DTOs) → `Application` (application services, casos de uso) → `Domain` (entidades, value objects, reglas) → `Infrastructure` (repositorios EF Core, clientes externos), reflejando el diagrama de componentes de 4.6.4 |
+| Nomenclatura de clases | PascalCase, coincide con el Ubiquitous Language (2.5) y el diagrama de clases (4.7.1): `SpraySession`, `FaultCase`, `NominalRange`, `QualityCertificate`, nunca sinónimos genéricos como `Record` o `Item` |
+| Acceso a datos | Entity Framework Core con proveedor Pomelo.EntityFrameworkCore.MySql; migraciones versionadas con `dotnet ef migrations` |
+| Inyección de dependencias | Contenedor de DI nativo de ASP.NET Core (`builder.Services.AddScoped<...>()`), sin contenedores de terceros |
+| Pruebas | xUnit + Moq para unitarias; para integración de repositorios se usa una base de datos MySQL de pruebas dedicada (esquema `edgewatch_test`, referenciada por una cadena de conexión propia en CI |
+| Documentación de API | Swashbuckle (Swagger/OpenAPI); cada endpoint del Product Backlog (p. ej. `POST /api/v1/spray-sessions`) queda documentado en Swagger UI |
+
+**Frontend (Vue / JavaScript, sin build)**
+
+El frontend no usa bundler ni compilador de Single File Components: Vue 3 se carga como build global vía CDN (`<script src="https://unpkg.com/vue@3/dist/vue.global.js">`), igual que Vue Router para la Web Application, y todo el código de la aplicación es JavaScript plano cargado como módulos ES nativos del navegador (`<script type="module" src="app.js">`), sin paso de transpilación. `npm` se usa únicamente para instalar Express y ejecutar `server.js`, el archivo que sirve los estáticos.
+
+| Aspecto | Convención |
+|---|---|
+| Guía base | Vue Style Guide oficial (equipo core de Vue), en las reglas aplicables a proyectos sin SFC; ESLint (`eslint-plugin-vue` en modo *flat/essential*) y Prettier para el JavaScript, ejecutados como pre-commit hook con Husky |
+| Organización de archivos | `js/core/` (helper de fetch, guards de navegación), `js/shared/` (componentes de 4.1.2: Session Card, Alert Card, Badge de estado), `js/features/sessions/`, `js/features/alerts/`, `js/features/diagnostics/`, `js/features/certificates/`, `js/features/pcr/`, cada uno como módulo ES que exporta un objeto de componente Vue |
+| Componentes | `Vue.defineComponent({ ... })` por archivo, registrado en la instancia creada con `Vue.createApp()`; plantillas como *template strings* o como `<template id="...">` en el propio HTML (in-DOM templates), sin `.vue` ni compilador. Estado local reactivo con `Vue.ref` / `Vue.computed` (telemetría en vivo de la Pantalla 3, sección 4.4.1) |
+| Estado global | Módulo `store.js` propio basado en `Vue.reactive()`, expuesto como singleton importado por los módulos que lo necesitan; se evita añadir una librería adicional de estado dado el enfoque minimalista sin build |
+| Estilos | CSS plano (no SCSS, al no haber paso de compilación) con variables nativas `:root { --color-primary: #0B2545; --color-warning: #FFB300; ... }` generadas a partir de los tokens de 4.1.1/4.1.2, sin colores *hardcodeados* fuera de ese archivo |
+| Estado remoto | Módulo `api.js` con funciones sobre `fetch` nativo del navegador que agregan el header de autenticación (JWT) y centralizan el manejo de errores; enrutamiento de la Web Application con Vue Router (build global vía CDN) |
+| Pruebas | Jest + @vue/test-utils para unitarias de componentes (ambos corren sobre Node sin necesitar bundler); Cypress para *end-to-end* de los flujos críticos (4.4.4): inicio de sesión de rociado, emisión de certificado |
+
+**Base de datos y API**
+
+Tablas y columnas en `snake_case`, nombradas de forma idéntica al diagrama entidad-relación (4.8.1); recursos REST en sustantivos plurales y versión de ruta explícita (`/api/v1/...`), consistentes con los endpoints ya definidos en el Product Backlog (3.3).
+
 ### 5.1.4. Software Deployment Configuration.
+
+**Entornos**
+
+| Entorno | Propósito | Se actualiza |
+|---|---|---|
+| Local | Desarrollo individual (5.1.1) | En cada máquina, bajo demanda |
+| Staging | QA y demo interna al final de cada sprint | Automáticamente al hacer merge a `develop` |
+| Producción | Entorno visible para clientes / sustentación | Automáticamente al hacer merge a `main` (tras `release/*`) |
+
+**Infraestructura por contenedor lógico**
+
+| Contenedor | Plataforma de despliegue | Empaquetado |
+|---|---|---|
+| Landing Page (Vue, JS plano) | Firebase Hosting (proyecto `edgewatch-landing`) | Sin build: `firebase deploy --only hosting` publica directamente los archivos estáticos (`index.html`, `js/`, `css/`) al CDN de Firebase |
+| Web Application (Vue SPA, JS plano) | Firebase Hosting (proyecto `edgewatch-webapp`, sitio independiente) | Sin build: `firebase deploy --only hosting`, con *rewrite* `"source": "**", "destination": "/index.html"` en `firebase.json` para las rutas de Vue Router |
+| REST API (ASP.NET Core, incluye ingesta y notificaciones) | Azure App Service (Linux, plan Basic/B1) | Despliegue nativo de código, **sin contenedor**: `dotnet publish` genera el artefacto y GitHub Actions lo sube con `azure/webapps-deploy@v3` |
+| MySQL | Azure Database for MySQL – Flexible Server | Instancia gestionada con backups automáticos diarios |
+| Almacenamiento de certificados | Azure Blob Storage | Acceso vía SDK `Azure.Storage.Blobs` desde `CertificateApplicationService` (4.6.4) |
+
+El servidor NodeJS descrito en 5.1.1 se usa solo en desarrollo local: en producción, Firebase Hosting sirve los mismos archivos estáticos directamente desde su CDN, sin un proceso Node corriendo. El backend tampoco corre en contenedor en ningún entorno: Azure App Service ejecuta el artefacto de `dotnet publish` de forma nativa. Esta combinación consolida el backend en un solo proveedor cloud (Azure), coherente con el Business Assumption de operar sin costos de licenciamiento que comprometan el margen (1.2.2.2).
+
+**Pipeline de CI/CD (GitHub Actions)**
+
+```mermaid
+flowchart LR
+classDef stage fill:#90CAF9,stroke:#1565C0,color:#000000
+classDef gate fill:#FFB300,stroke:#E65100,color:#000000
+classDef deploy fill:#2E7D32,stroke:#1B5E20,color:#FFFFFF
+
+PUSH["Push / PR a develop o main"] --> LINT["Lint\n(ESLint / dotnet format)"]:::stage
+LINT --> BUILD["Instalar / compilar\n(npm install / dotnet build)"]:::stage
+BUILD --> TEST["Tests\n(Jest-Cypress / xUnit contra MySQL de pruebas)"]:::stage
+TEST --> GATE{"¿Todo en verde?"}:::gate
+GATE -- "No" --> FAIL["PR bloqueada"]
+GATE -- "Sí, PR a develop" --> STAGING["Deploy automático\na Staging"]:::deploy
+GATE -- "Sí, merge a main (frontend)" --> DEPLOYFE["firebase deploy\n--only hosting"]:::deploy
+GATE -- "Sí, merge a main (backend)" --> PUBLISH["dotnet publish"]:::stage
+PUBLISH --> PROD["azure/webapps-deploy\na Azure App Service"]:::deploy
+```
+
+Cada repositorio de servicio incluye su propio workflow (`.github/workflows/ci.yml`), y las credenciales de despliegue (clave de cuenta de servicio de Firebase, perfil de publicación de Azure, cadena de conexión de MySQL) se gestionan como GitHub Actions Secrets a nivel de repositorio, nunca en archivos versionados, conforme a lo indicado en 5.1.1.
+
 ## 5.2. Landing Page, Services & Applications Implementation.
 ### 5.2.X. Sprint n
 #### 5.2.X.1. Sprint Planning n.
