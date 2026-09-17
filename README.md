@@ -2650,8 +2650,42 @@ PUBLISH --> PROD["azure/webapps-deploy\na Azure App Service"]:::deploy
 Cada repositorio de servicio incluye su propio workflow (`.github/workflows/ci.yml`), y las credenciales de despliegue (clave de cuenta de servicio de Firebase, perfil de publicación de Azure, cadena de conexión de MySQL) se gestionan como GitHub Actions Secrets a nivel de repositorio, nunca en archivos versionados, conforme a lo indicado en 5.1.1.
 
 ## 5.2. Landing Page, Services & Applications Implementation.
-### 5.2.X. Sprint n
-#### 5.2.X.1. Sprint Planning n.
+### 5.2.1. Sprint 1
+
+En este Sprint el equipo se enfocó en construir y desplegar la primera versión del Landing Page de EdgeWatch, cumpliendo con lo exigido para la entrega AV1. El alcance del Sprint corresponde a las historias que encabezan el Product Backlog (3.3): las historias de usuario del sitio web estático (E10) y la historia técnica de integración con el servicio externo de newsletter (TS18), dado que constituyen el canal de captación de los segmentos Recuperation Supplier y Asset Owner y deben estar disponibles antes que cualquier otra funcionalidad de la plataforma.
+
+#### 5.2.1.1. Sprint Planning 1.
+
+Resumen de la reunión de Sprint Planning realizada por el equipo al inicio del ciclo de vida del proyecto.
+
+| Sprint # | Sprint 1 |
+|---|---|
+| **Sprint Planning Background** | |
+| Fecha | 2026-09-13 |
+| Hora | 8:00 PM |
+| Lugar | Reunión virtual vía Google Meet |
+| Preparado por | Navarro Aldoradin, Carolina Celeste |
+| Asistentes (a la reunión de planning) | Navarro Aldoradin, Carolina Celeste / Alvarez Falen, Esteban Valentino / Catacora Tupa, Jhon Deyner / Vasquez Laos, Sebastian Andrews / Yopla Romero, Jonathan Alberto |
+| **Resumen del Sprint n-1 Review** | No aplica. Es el primer Sprint. |
+| **Resumen de la Retrospectiva del Sprint n-1** | No aplica. Al ser el primer Sprint, el equipo no cuenta con una retrospectiva previa. |
+| **Sprint Goal & User Stories** | |
+| Sprint 1 Goal | Nuestro enfoque está en ofrecer a los visitantes de ambos segmentos objetivo (Recuperation Supplier y Asset Owner) un primer punto de contacto claro con la propuesta de valor de EdgeWatch. Creemos que esto entrega confianza inicial y facilidad para decidir si la solución es relevante, a los visitantes del Landing Page. Esto se confirmará cuando un visitante pueda conocer la propuesta de valor, acceder a la información de su segmento, suscribirse al newsletter y llegar desde el call-to-action correspondiente hasta la vista de registro de la Web Application. |
+| Sprint 1 Velocity | 19 Story Points |
+| Suma de Story Points | 19 Story Points |
+
+**Historias de usuario incluidas en el Sprint 1**
+
+| # Orden | User Story Id | Título | Story Points |
+|---|---|---|---|
+| 1 | US44 | Conocer la propuesta de valor | 3 |
+| 2 | US45 | Información para Recuperation Supplier | 2 |
+| 3 | US46 | Información para Asset Owner | 2 |
+| 4 | US47 | Registro desde call-to-action segmentado | 2 |
+| 5 | US48 | Cambio de idioma | 3 |
+| 6 | US50 | Acceso a Términos y Condiciones | 1 |
+| 7 | US49 | Suscripción al newsletter | 3 |
+| 8 | TS18 | Suscripción al newsletter vía Mailchimp | 3 |
+
 #### 5.2.X.2. Aspect Leaders and Collaborators.
 #### 5.2.X.3. Sprint Backlog n.
 #### 5.2.X.4. Development Evidence for Sprint Review.
