@@ -1871,13 +1871,146 @@ Cada ancla de sección (`#problema`, `#solucion`, `#segmentos`) se refleja como 
 ## 4.4. Web Applications UX/UI Design.
 
 ### 4.4.1. Web Applications Wireframes.
-
+<div align="center">
+ <img src="assets/img/chapter-iv/Wireframe 1.png" width="600" alt="Wireframe de EdgeWatch">
+ <img src="assets/img/chapter-iv/Wireframe 2.png" width="600" alt="Wireframe de EdgeWatch">
+ <img src="assets/img/chapter-iv/Wireframe 3.png" width="600" alt="Wireframe de EdgeWatch">
+ <img src="assets/img/chapter-iv/Wireframe 4.png" width="600" alt="Wireframe de EdgeWatch">
+ <img src="assets/img/chapter-iv/Wireframe 5.png" width="600" alt="Wireframe de EdgeWatch">
+ <img src="assets/img/chapter-iv/Wireframe 6.png" width="600" alt="Wireframe de EdgeWatch">
+ <img src="assets/img/chapter-iv/Wireframe 7.png" width="600" alt="Wireframe de EdgeWatch">
+</div>
 
 ### 4.4.2. Web Applications Wireflow Diagrams.
+**A. Onboarding y acceso**
+
+```mermaid
+flowchart LR
+classDef pantalla fill:#90CAF9,stroke:#1565C0,color:#000000
+classDef accion fill:#FFECB3,stroke:#FF7A00,color:#000000
+
+LP["Landing Page\n#segmentos"]:::pantalla -->|"click CTA segmentado (US47)"| REG["Auth / Registro\n(datos + tipo de org.)"]:::pantalla
+REG -->|"submit (US01)"| PLAN["Selección de plan\n(US05)"]:::pantalla
+PLAN -->|"confirmar plan"| LOGIN["Auth / Login\n(US02)"]:::pantalla
+LOGIN -->|"credenciales válidas"| DASH["Dashboard"]:::pantalla
+LOGIN -.->|"credenciales inválidas"| LOGIN
+```
+
+**B. Cadena de valor core: de la celda a la sesión de rociado**
+
+```mermaid
+flowchart LR
+classDef pantalla fill:#90CAF9,stroke:#1565C0,color:#000000
+
+CONF["Configuración\nCelda + Rangos (US07-US09)"]:::pantalla -->|"celda activa"| SESLIST["Sesiones\nListado"]:::pantalla
+SESLIST -->|"+ Iniciar sesión (US19)"| SESMON["Sesión\nMonitoreo en vivo (US22)"]:::pantalla
+SESMON -->|"lectura fuera de rango (US21)"| ALERTA["Alertas\n(US31)"]:::pantalla
+ALERTA -->|"Ver diagnóstico"| DIAG["Diagnóstico\nCaso de falla (US25-US26)"]:::pantalla
+DIAG -->|"Confirmar causa raíz (US27)"| SESMON
+SESMON -->|"Finalizar / Abortar (US23)"| SESLIST
+```
+
+**C. Evidencia y trazabilidad**
+
+```mermaid
+flowchart LR
+classDef pantalla fill:#90CAF9,stroke:#1565C0,color:#000000
+
+SESLIST2["Sesiones\nListado"]:::pantalla -->|"Cerrar orden (US18)"| HIST["Historial de Componente\nLínea de tiempo"]:::pantalla
+HIST -->|"Emitir certificado (US35)"| CERT["Certificado de Calidad\nemitido"]:::pantalla
+CERT -->|"Exportar (US37)"| EXP["Descarga CSV/PDF"]:::pantalla
+CERT -->|"Consulta del cliente (US41)"| PORTAL["Portal de Certificados\n(vista Asset Owner)"]:::pantalla
+```
+
+**D. Desempeño en campo (Asset Owner)**
+
+```mermaid
+flowchart LR
+classDef pantalla fill:#90CAF9,stroke:#1565C0,color:#000000
+
+CONSOL["Vista Consolidada\nComponentes (US39)"]:::pantalla -->|"+ Registrar retorno (US40)"| RETORNO["Registro de Retorno\nde Campo"]:::pantalla
+RETORNO -->|"horómetro < PCR"| ORIGEN["Sesión de Origen\n(US43)"]:::pantalla
+RETORNO -->|"horómetro >= PCR"| PCRCOMP["Comparativo\nReal vs. PCR (US42)"]:::pantalla
+ORIGEN --> PCRCOMP
+```
 
 ### 4.4.3. Web Applications Mock-ups.
+<div align="center">
+ <img src="assets/img/chapter-iv/Mockup 1.png" width="600" alt="Wireframe de EdgeWatch">
+ <img src="assets/img/chapter-iv/Mockup 2.png" width="600" alt="Wireframe de EdgeWatch">
+ <img src="assets/img/chapter-iv/Mockup 3.png" width="600" alt="Wireframe de EdgeWatch">
+ <img src="assets/img/chapter-iv/Mockup 4.png" width="600" alt="Wireframe de EdgeWatch">
+ <img src="assets/img/chapter-iv/Mockup 5.png" width="600" alt="Wireframe de EdgeWatch">
+ <img src="assets/img/chapter-iv/Mockup 6.png" width="600" alt="Wireframe de EdgeWatch">
+ <img src="assets/img/chapter-iv/Mockup 7.png" width="600" alt="Wireframe de EdgeWatch">
+</div>
 
 ### 4.4.4. Web Applications User Flow Diagrams.
+**Flujo 1 — Rosa Miranda (Ingeniero de Calidad): sustentar ante el cliente minero que un lote fue recubierto dentro de tolerancias** *(Journey Map 1, 2.3.3)*
+
+```mermaid
+flowchart TD
+Start(["Cliente minero cuestiona\nla calidad de un lote"]) --> Buscar["Buscar componente\npor N° de serie / OF / WO"]
+Buscar --> Existe{"¿Componente\nregistrado en\nEdgeWatch?"}
+Existe -- "No" --> Manual["Reconstruir evidencia\nmanualmente (proceso actual)"]
+Existe -- "Sí" --> Timeline["Abrir línea de tiempo\ndel componente"]
+Timeline --> Dentro{"¿Sesión dentro\nde rango nominal?"}
+Dentro -- "Sí" --> Certificado["Emitir / recuperar\ncertificado de calidad"]
+Dentro -- "No" --> Revisar["Revisar desviaciones\nregistradas en la sesión"]
+Certificado --> Entregar(["Entregar evidencia\nal cliente minero"])
+Revisar --> Entregar
+```
+
+**Flujo 2 — Jorge Salinas (Jefe de Mantenimiento): diagnosticar una parada no programada** *(Journey Map 2, 2.3.3)*
+
+```mermaid
+flowchart TD
+Start(["Operador reporta\nparada del equipo"]) --> Alerta["Abrir Alertas /\nCaso de falla abierto"]
+Alerta --> Recurrente{"¿Patrón\nrecurrente\ndetectado?"}
+Recurrente -- "Sí" --> Priorizar["Priorizar intervención\nde la parte señalada"]
+Recurrente -- "No" --> Ver["Ver causa probable\ny parte sospechosa sugerida"]
+Ver --> Correcta{"¿Causa\nsugerida es\ncorrecta?"}
+Correcta -- "Sí" --> Confirmar["Confirmar causa raíz\ny acción correctiva"]
+Correcta -- "No" --> Corregir["Corregir causa raíz\nmanualmente"]
+Priorizar --> Confirmar
+Confirmar --> Fin(["Equipo reparado,\nconocimiento documentado"])
+Corregir --> Fin
+```
+
+**Flujo 3 — Operador HVOF: iniciar y monitorear una sesión de rociado**
+
+```mermaid
+flowchart TD
+Start(["Inicia turno\nen cabina de rociado"]) --> Seleccion["Seleccionar celda\ny orden de recuperación"]
+Seleccion --> Iniciar["Iniciar sesión (US19)"]
+Iniciar --> Monitorear["Observar parámetros\nen vivo (US22)"]
+Monitorear --> Desviacion{"¿Parámetro\nfuera de rango?"}
+Desviacion -- "Sí" --> Alertado["Recibir alerta\ninstantánea (US31)"]
+Alertado --> Ajustar["Ajustar proceso\no reportar a mantenimiento"]
+Ajustar --> Monitorear
+Desviacion -- "No" --> Continuar["Continuar corrida"]
+Continuar --> Termino{"¿Corrida\ncompleta?"}
+Termino -- "No" --> Monitorear
+Termino -- "Sí" --> Finalizar["Finalizar sesión (US23)"]
+Finalizar --> Fin(["Sesión registrada"])
+```
+
+**Flujo 4 — Ingeniero de Confiabilidad (Asset Owner): evaluar cumplimiento de PCR de un proveedor**
+
+```mermaid
+flowchart TD
+Start(["Componente retorna\ndesde mina"]) --> Registrar["Registrar retorno de campo\ncon horómetro alcanzado (US40)"]
+Registrar --> Cumple{"¿Horómetro >=\nPCR objetivo?"}
+Cumple -- "Sí" --> OK["Marcar como\ndesempeño conforme"]
+Cumple -- "No" --> Prematura["Falla prematura:\nver sesión de origen (US43)"]
+Prematura --> Origen{"¿Origen en el\nproceso de recubrimiento?"}
+Origen -- "Sí" --> Reclamo["Sustentar reclamo\nal proveedor con evidencia"]
+Origen -- "No" --> Descartar["Descartar responsabilidad\ndel proveedor"]
+OK --> Reporte["Consultar tasa de\ncumplimiento por proveedor (US42)"]
+Reclamo --> Reporte
+Descartar --> Reporte
+Reporte --> Fin(["Decisión de renovación\no cambio de contrato"])
+```
 
 ## 4.5. Web Applications Prototyping.
 
