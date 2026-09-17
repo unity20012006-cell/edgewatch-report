@@ -2650,7 +2650,10 @@ PUBLISH --> PROD["azure/webapps-deploy\na Azure App Service"]:::deploy
 Cada repositorio de servicio incluye su propio workflow (`.github/workflows/ci.yml`), y las credenciales de despliegue (clave de cuenta de servicio de Firebase, perfil de publicación de Azure, cadena de conexión de MySQL) se gestionan como GitHub Actions Secrets a nivel de repositorio, nunca en archivos versionados, conforme a lo indicado en 5.1.1.
 
 ## 5.2. Landing Page, Services & Applications Implementation.
-### 5.2.X. Sprint n
+### 5.2.X. Sprint 1
+
+En este Sprint el equipo se enfocó en construir y desplegar la primera versión del Landing Page de EdgeWatch, cumpliendo con lo exigido para la entrega AV1. El alcance del Sprint corresponde a las historias que encabezan el Product Backlog (3.3): las historias de usuario del sitio web estático (E10) y la historia técnica de integración con el servicio externo de newsletter (TS18), dado que constituyen el canal de captación de los segmentos Recuperation Supplier y Asset Owner y deben estar disponibles antes que cualquier otra funcionalidad de la plataforma.
+
 #### 5.2.X.1. Sprint Planning n.
 #### 5.2.X.2. Aspect Leaders and Collaborators.
 #### 5.2.X.3. Sprint Backlog n.
