@@ -581,6 +581,558 @@ Ante la falta de trayectoria de la startup, la táctica consiste en apoyarse en 
 ## 2.2. Entrevistas.
 ### 2.2.1. Diseño de entrevistas.
 ### 2.2.2. Registro de entrevistas.
+
+SPK_1
+0:02
+OK, empezamos con la entrevista.
+
+SPK_1
+0:04
+¿Me podría decir su nombre señor?
+
+SPK_2
+0:07
+OK, mi nombre es David Morales, actualmente tengo 24 años.
+
+SPK_1
+0:14
+¿De qué género es usted?
+
+SPK_2
+0:17
+OK, soy de género masculino.
+
+SPK_1
+0:21
+OK, bueno ya se presentó.
+
+SPK_1
+0:24
+¿En qué distrito vive actualmente y en qué distrito trabaja usted?
+
+SPK_2
+0:30
+OK, vivo en Lima y pues justamente trabajo en Lima.
+
+SPK_1
+0:37
+Claro.
+
+SPK_1
+0:38
+¿Usted me podría decir el área en el que trabaja?
+
+SPK_2
+0:42
+Soy supervisor de mantenimiento.
+
+SPK_1
+0:45
+OK, de la mina.
+
+SPK_2
+0:47
+¿Pero usted trabaja,.
+
+SPK_1
+0:49
+Usted trabaja desde Lima, cierto?
+
+SPK_1
+0:53
+¿Me podría decir su estado civil, su familia, etcétera?
+
+SPK_2
+0:58
+OK, actualmente vivo con mi familia, no tengo hijos ni persona directamente a mi cargo fuera del trabajo.
+
+SPK_1
+1:06
+¿OK, me podría decir que estudió y cómo llegó a su puesto actual?
+
+SPK_2
+1:13
+Claro, estudié ingeniería industrial y empecé relacionado con operaciones y mantenimiento y con el tiempo fui asumiendo más responsabilidades de llegar a supervisión.
+
+SPK_1
+1:25
+Entiendo.
+
+SPK_1
+1:26
+¿Entonces cuál es su cargo actual, qué es lo que hace y a quién se reporta usted?
+
+SPK_2
+1:37
+Bueno, actualmente soy supervisor de mantenimiento, como mencioné, llevo aproximadamente dos años en puesto y bueno lo reporto al jefe de mantenimiento qué es lo que principalmente hago en mi trabajo es, diría que se me da bien coordinar el equipo y bueno priorizar los trabajos.
+
+SPK_2
+1:56
+Lo más complicado bueno sería que cuando se necesita a lo mejor tomar una decisión rápida y la información está todo dispersa por distintos sitios y así.
+
+SPK_1
+2:10
+¿OK, Entiendo su personalidad, usted es más de planificar o de resolver sobre la marcha y suele hacer las cosas solo o en equipo?
+
+SPK_2
+2:22
+Me gusta tener las cosas bastante más planificadas, pero en mantenimiento obviamente siempre aparecen imprevistos, trabajo bastante en equipo porque tengo que coordinar con técnicos, planners y otras áreas.
+
+SPK_1
+2:38
+¿Entiendo, pero en lo que usted, su trabajo personal le gusta más hacerlo solo?
+
+SPK_1
+2:42
+Entiendo,.
+
+SPK_2
+2:46
+Bueno, como de preferencia sí.
+
+SPK_1
+2:50
+OK.
+
+SPK_1
+2:52
+¿Sobre sus habilidades, qué es lo que usted sabe mejor de hacer en su trabajo?
+
+SPK_2
+2:59
+Bueno, se me da bien coordinar a mi equipo, aunque me guste trabajar forma individual, pero sí se me da bien y sobre todo pues organizar justamente los trabajos.
+
+SPK_1
+3:12
+¿Y qué es lo que le cuesta más.
+
+SPK_2
+3:16
+A lo mejor cuando hay un imprevisto?
+
+SPK_2
+3:19
+Como mencioné antes, lo más complicado sería tomar una decisión rápidamente y bueno y tener que consultar a diversos, diversos fuentes de información que están todas dispersas.
+
+SPK_1
+3:30
+Entiendo.
+
+SPK_1
+3:30
+No le gusta improvisar.
+
+SPK_2
+3:33
+Exacto.
+
+SPK_2
+3:34
+¿Creo que a cualquiera le generaría un mal disgusto cierto?
+
+SPK_1
+3:37
+No, a mí me gusta, pero bueno.
+
+SPK_1
+3:42
+Sobre el browser que usted utiliza en su trabajo.
+
+SPK_1
+3:46
+¿En qué dispositivo trabaja primero y qué navegador exactamente utiliza?
+
+SPK_2
+3:52
+Bueno, normalmente uso mi laptop porque me resulta más cómodo el desplazarme y todavía estar al tanto de mi trabajo.
+
+SPK_2
+4:00
+Adicionalmente uso el teléfono.
+
+SPK_2
+4:02
+Claro, Chrome, Chrome usualmente.
+
+SPK_2
+4:06
+Y trabajo, trabajo desde mi oficina.
+
+SPK_2
+4:09
+¿Por.
+
+SPK_1
+4:13
+Sobre los canales digitales que suele hacer uso porque medio se comunica con su equipo?
+
+SPK_1
+4:18
+Bueno, ya me dijo que suele utilizar el teléfono y su laptop.
+
+SPK_1
+4:22
+¿Y en urgencias también utiliza el teléfono.
+
+SPK_2
+4:25
+O Creo que en urgencias es mucho más obvio que utilicé el teléfono, no?
+
+SPK_2
+4:31
+Es un medio, un dispositivo bastante accesible, rápido.
+
+SPK_2
+4:37
+Y sobre los medios que uso, pues la verdad no llegué a mencionar solo que uso el teléfono, pero los medios como tal pues para comunicación serían básicamente con la empresa serían correo y Teams y con el teléfono sería WhatsApp.
+
+SPK_1
+4:53
+Entiendo.
+
+SPK_1
+4:53
+¿Con su grupo de trabajo suele utilizar WhatsApp?
+
+SPK_2
+4:57
+Claro.
+
+SPK_1
+4:59
+OK.
+
+SPK_1
+4:59
+¿Sobre las marcas, influencias, cómo se mantiene actualizado usted y qué marcas o referentes del sector respeta?
+
+SPK_2
+5:08
+OK.
+
+SPK_2
+5:09
+Me mantengo actualizado principalmente mediante capacitaciones, a lo mejor la lectura de alguna documentación sea también mediante la información de proveedores y alguna que otra experiencia de otros compañeros.
+
+SPK_2
+5:25
+Sobre las marcas, pues en equipos mineros conozco bastante marcas como Caterpillar y Komatsu.
+
+SPK_1
+5:34
+Entiendo.
+
+SPK_1
+5:36
+¿Pasando con sus objetivos y sus frustraciones, que le gusta más de su trabajo y qué le frustra?
+
+SPK_2
+5:44
+OK.
+
+SPK_2
+5:45
+Lo que más me gusta de mi trabajo es poder resolver justamente esos problemas y lograr que como supervisor al menos los equipos vuelvan a operar así con total normalidad.
+
+SPK_2
+5:58
+Igualmente bueno lo que me frustra es que es perder el tiempo justamente buscando información correspondiente obviamente a la empresa que debería estar disponible.
+
+SPK_2
+6:09
+Yo creo que rápidamente.
+
+SPK_1
+6:13
+Entiendo.
+
+SPK_1
+6:14
+¿Pasemos con las preguntas un poco más de su nicho, Cuénteme cómo funciona la recuperación de componentes en superación?
+
+SPK_1
+6:22
+¿Qué piezas y con cuántos proveedores trabajan?
+
+SPK_2
+6:28
+OK.
+
+SPK_2
+6:29
+Bueno, sobre los componentes, cuando un componente presenta un desgaste o alguna falla, primero evaluamos si se puede recuperar antes de reemplazarlo.
+
+SPK_2
+6:38
+Si se puede se envía un proveedor para su reparación.
+
+SPK_2
+6:43
+Bueno, normalmente pasa con bombas, con motores, cilindros y componentes de equipo pesados.
+
+SPK_2
+6:50
+Obviamente dependiendo del componente trabajamos con distintos proveedores.
+
+SPK_1
+6:56
+Entiendo.
+
+SPK_1
+6:57
+¿Ustedes manejan una expectativa de cuánto debe durar un componente recuperado?
+
+SPK_1
+7:01
+¿Cómo lo llaman y cómo le hacen un seguimiento?
+
+SPK_2
+7:06
+OK.
+
+SPK_2
+7:06
+Si, normalmente tenemos una referencia de las horas que debería trabajar después de la reparación, lo comparamos con el historial del componente y con lo que indica el proveedor.
+
+SPK_2
+7:16
+¿Y cómo lo hacemos seguimiento?
+
+SPK_2
+7:18
+Pues principalmente con las horas de operación y los registros de mantenimiento.
+
+SPK_2
+7:22
+Si vuelve a fallar antes de lo esperado, bueno, ahí ya se revisa con más detalle.
+
+SPK_1
+7:27
+Entiendo.
+
+SPK_1
+7:28
+Cuénteme la última vez que un componente recuperado falló antes de lo previsto, ¿Qué pasó en la operación?
+
+SPK_1
+7:35
+¿Cuánto costó?
+
+SPK_1
+7:36
+¿Y llegaron a saber el por qué?
+
+SPK_2
+7:40
+OK.
+
+SPK_2
+7:41
+Recuerdo un caso con una bomba que había sido reparada y volvió a presentar problemas antes de lo planificado, Vaya, tuvimos que detener el equipo para cambiarla y revisar qué había pasado.
+
+SPK_2
+7:55
+¿Qué pasó con la operación?
+
+SPK_2
+7:56
+Bueno, una parada que no estaba prevista y tuvimos que reorganizar algunos trabajos, mover varias cosas, vaya.
+
+SPK_2
+8:04
+¿Y si llegamos a saber por qué falló?
+
+SPK_2
+8:08
+Pues justamente hicimos una revisión con el proveedor y el problema es que juntar toda la información tomó tiempo.
+
+SPK_2
+8:17
+Está en diferentes registros, así que no llegamos a concluir el fallo en el momento.
+
+SPK_1
+8:24
+Entiendo.
+
+SPK_1
+8:26
+Yo le entregué el proveedor junto con la pieza.
+
+SPK_1
+8:29
+¿Quién lo revisa, dónde se guarda?
+
+SPK_1
+8:31
+Y además ¿Le sirvió alguna vez después?
+
+SPK_2
+8:36
+OK.
+
+SPK_2
+8:36
+Generalmente nos entregan un informe de la reparación, las pruebas que se realizaron y algunas recomendaciones del uso para el componente.
+
+SPK_2
+8:46
+¿Lo revisa?
+
+SPK_2
+8:48
+Lo suelo revisar.
+
+SPK_2
+8:51
+Bueno, lo suelo revisar.
+
+SPK_2
+8:53
+La parte del mantenimiento junto con confiabilidad.
+
+SPK_2
+8:57
+Algunos documentos quedan en el sistema y otros llegan por correo, seguro, en carpetas compartidas.
+
+SPK_2
+9:04
+¿Le sirvió?
+
+SPK_2
+9:05
+¿Bueno, si, sobre me sirvió?
+
+SPK_2
+9:08
+Bueno, sí, parece que sí, porque sobre todo cuando vuelve a presentarse una falla y necesitamos revisar qué trabajo se realizó anteriormente.
+
+SPK_1
+9:17
+Entiendo.
+
+SPK_1
+9:19
+¿Dónde se registra la información de los componentes recuperados?
+
+SPK_1
+9:22
+Se SAP, SMS, Excel y es todo.
+
+SPK_1
+9:27
+¿Se registra en un solo lugar?
+
+SPK_2
+9:31
+Justamente tenemos un servicio SAP y también manejamos algunos Excels.
+
+SPK_1
+9:36
+Claro,.
+
+SPK_2
+9:38
+Si está todo en un solo lugar.
+
+SPK_2
+9:40
+Pues no, realmente es bastante usual compartir la información entre distintos medios.
+
+SPK_2
+9:48
+Y quizás ese es uno de los problemas, porque para revisar el historial completo a veces tienes que buscar en varios sitios y bueno, todo eso dificulta un poco los informes que se requieren hacer de vez en cuando.
+
+SPK_1
+10:00
+Claro, la velocidad de trabajo.
+
+SPK_2
+10:03
+Exacto.
+
+SPK_1
+10:05
+Si quisieras comparar qué proveedor entrega piezas que duran más, ¿Cómo lo harían hoy?
+
+SPK_1
+10:11
+¿Alguna vez lo han intentado y le tomó, le tomó tiempo?
+
+SPK_1
+10:16
+Si lo han intentado.
+
+SPK_2
+10:20
+¿Bueno, yo creo que tendremos que revisar el historial de los componentes, al menos las horas de funcionamiento, y relacionarlo con el proveedor que hizo cada reparación?
+
+SPK_2
+10:28
+Claro, si, se podría decir que he revisado para algunos casos, pero bastante manual.
+
+SPK_2
+10:36
+Dependiendo de cuánto historial quiere revisar, puede tomar bastantes horas.
+
+SPK_1
+10:42
+Entiendo.
+
+SPK_1
+10:42
+¿Es algo que ha hecho más en su cabeza?
+
+SPK_1
+10:49
+Entiendo.
+
+SPK_1
+10:50
+¿Ustedes suelen auditar a sus proveedores que revisan y qué les piden que demuestren?
+
+SPK_2
+10:58
+Sí, aunque esa evaluación se hace junto con otras áreas, no es correspondiente solo a mi área.
+
+SPK_2
+11:05
+Nosotros desde Mantenimiento damos bueno, la información sobre cómo se comportan los componentes que entregan.
+
+SPK_2
+11:13
+¿Y sobre qué revisamos?
+
+SPK_2
+11:14
+Bueno, se revisa la calidad de los trabajos, los procedimientos que se utilizan, las pruebas que se realizan y bueno, el historial de los componentes.
+
+SPK_2
+11:25
+Usualmente lo que se nos pide demostrar es obviamente que tengan la evidencia de las reparaciones realizadas, los resultados de las pruebas y que pueden sustentar que el componente fue entregado en las condiciones anteriormente acordadas.
+
+SPK_1
+11:41
+Entiendo.
+
+SPK_1
+11:42
+Bueno, eso sería todo por la entrevista de hoy.
+
+SPK_1
+11:44
+Gracias Sr.
+
+SPK_1
+11:45
+David.
+
+SPK_2
+11:46
+Está bien, gracias.
+
+
+
+
 ### 2.2.3. Análisis de entrevistas.
 ## 2.3. Needfinding.
 ### 2.3.1. User Personas.
