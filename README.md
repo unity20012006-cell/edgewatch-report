@@ -2686,13 +2686,112 @@ Resumen de la reunión de Sprint Planning realizada por el equipo al inicio del 
 | 7 | US49 | Suscripción al newsletter | 3 |
 | 8 | TS18 | Suscripción al newsletter vía Mailchimp | 3 |
 
-#### 5.2.X.2. Aspect Leaders and Collaborators.
-#### 5.2.X.3. Sprint Backlog n.
-#### 5.2.X.4. Development Evidence for Sprint Review.
-#### 5.2.X.5. Execution Evidence for Sprint Review.
-#### 5.2.X.6. Services Documentation Evidence for Sprint Review.
-#### 5.2.X.7. Software Deployment Evidence for Sprint Review.
-#### 5.2.X.8. Team Collaboration Insights during Sprint.
+#### 5.2.1.2. Aspect Leaders and Collaborators.
+
+Para garantizar una ejecución estructurada y promover el liderazgo compartido en concordancia con el **ABET Student Outcome 5**, el equipo WebRunners definió una distribución matricial de roles y áreas de responsabilidad (aspects) para el proyecto y el Sprint 1. Bajo este enfoque, cada aspecto técnico, metodológico y de aseguramiento de calidad cuenta con un **Líder (Aspect Leader)** responsable de coordinar las actividades, velar por las buenas prácticas y asegurar el cumplimiento de los objetivos planteados, junto con **Colaboradores (Collaborators)** que participan activamente en la implementación, revisión por pares y validación cruzada.
+
+A continuación, se detalla la asignación de roles, responsabilidades, líderes y colaboradores:
+
+| Aspecto / Rol | Descripción de Responsabilidades | Líder (Aspect Leader) | Colaboradores (Collaborators) |
+|---|---|---|---|
+| **Product Owner & Gestión de Requisitos** | Definición y refinamiento del Product Backlog y Sprint Backlog, especificación de historias de usuario con criterios de aceptación Gherkin y priorización del alcance de cara a los segmentos Recuperation Supplier y Asset Owner. | Navarro Aldoradin, Carolina Celeste | Alvarez Falen, Esteban Valentino<br>Catacora Tupa, Jhon Deyner |
+| **Scrum Master & Gestión Ágil** | Facilitación y conducción de las ceremonias Scrum (Planning, Daily Stand-ups, Review y Retrospectiva), remoción de impedimentos operativos y monitoreo de la velocidad del equipo (19 Story Points planificados para el Sprint 1). | Navarro Aldoradin, Carolina Celeste | Vasquez Laos, Sebastian Andrews<br>Yopla Romero, Jonathan Alberto |
+| **Desarrollo Frontend & UI/UX** | Diseño e implementación de la interfaz del Landing Page (Vue 3, HTML5 semántico, CSS3 moderno), estructuración de layout responsivo multidispositivo, interactividad de componentes y sistema de internacionalización (i18n inglés/español). | Catacora Tupa, Jhon Deyner | Alvarez Falen, Esteban Valentino<br>Vasquez Laos, Sebastian Andrews |
+| **Desarrollo Backend & Servicios API** | Arquitectura del servicio REST API en ASP.NET Core (.NET 8), definición de contratos y endpoints en Swagger/OpenAPI, diseño de la ingesta de telemetría y desarrollo de la integración con el servicio externo de newsletter vía Mailchimp (TS18). | Vasquez Laos, Sebastian Andrews | Navarro Aldoradin, Carolina Celeste<br>Yopla Romero, Jonathan Alberto |
+| **Gestión de Base de Datos y Persistencia** | Modelado lógico y físico de la base de datos relacional en MySQL 8.0, gestión de migraciones mediante Entity Framework Core (Pomelo), aplicación de convenciones snake_case y optimización de persistencia para trazabilidad y telemetría. | Yopla Romero, Jonathan Alberto | Vasquez Laos, Sebastian Andrews<br>Navarro Aldoradin, Carolina Celeste |
+| **DevOps, SCM & Despliegue Continuo** | Administración del repositorio central y flujos de trabajo en Gitflow, definición de políticas de ramas y revisión de Pull Requests, orquestación de pipelines de CI/CD con GitHub Actions y gestión de despliegues en Firebase Hosting y Azure. | Catacora Tupa, Jhon Deyner | Yopla Romero, Jonathan Alberto<br>Alvarez Falen, Esteban Valentino |
+| **Aseguramiento de Calidad (QA) & Accesibilidad** | Planificación de casos de prueba funcional, verificación cross-browser y responsive, y aseguramiento de estándares de accesibilidad digital WCAG 2.1 nivel AA (roles ARIA, contraste cromático, etiquetado descriptivo y navegación por teclado). | Alvarez Falen, Esteban Valentino | Catacora Tupa, Jhon Deyner<br>Vasquez Laos, Sebastian Andrews |
+| **Documentación Técnica & Trazabilidad** | Redacción y mantenimiento del Project Report según los estándares académicos de la UPC, trazabilidad de evidencias de sprint, diagramación arquitectónica en Mermaid y consolidación bibliográfica bajo normas APA. | Alvarez Falen, Esteban Valentino | Navarro Aldoradin, Carolina Celeste<br>Yopla Romero, Jonathan Alberto |
+
+#### 5.2.1.3. Sprint Backlog 1.
+
+El Sprint Backlog 1 desglosa las historias de usuario priorizadas en tareas técnicas específicas de desarrollo frontend, maquetación responsiva, interactividad, internacionalización, accesibilidad y despliegue para la implementación completa del Landing Page de EdgeWatch (`edgewatch-website`). Todas las tareas fueron ejecutadas de forma íntegra y desplegadas exitosamente a producción mediante flujos automatizados de GitHub Actions hacia GitHub Pages.
+
+| UserStoryId | UserStoryTitle | Work-Item/TaskId | Work-Item/Task Title | Description | Estimation | AssignedTo | Status |
+|---|---|---|---|---|:---:|---|:---:|
+| US44 | Conocer la propuesta de valor | TSK-LP-01 | Maquetación HTML de Hero, Problem y Solution | Estructuración semántica HTML5 del header, banner principal, tarjetas del problema y propuesta de valor de EdgeWatch. | 4h | Jhon Deyner Catacora Tupa | Completed |
+| US44 | Conocer la propuesta de valor | TSK-LP-02 | Estilos CSS responsivos para Hero y Propuesta | Implementación de estilos CSS modulares, variables cromáticas, tipografía y adaptabilidad para desktop, tablet y mobile. | 3h | Jhon Deyner Catacora Tupa | Completed |
+| US44 | Conocer la propuesta de valor | TSK-LP-03 | Integración de assets multimedia y video de producto | Incorporación y optimización de imágenes SVG, infografías del proceso y contenedor responsivo para el video About the Product. | 2h | Jhon Deyner Catacora Tupa | Completed |
+| US45 | Información para Recuperation Supplier | TSK-LP-04 | Maquetación HTML de sección Recuperation Supplier | Construcción del bloque informativo enfocado en empresas de recubrimiento HVOF, destacando trazabilidad, certificación y diagnóstico. | 3h | Jhon Deyner Catacora Tupa | Completed |
+| US45 | Información para Recuperation Supplier | TSK-LP-05 | Estilos y layout visual para Recuperation Supplier | Diseño de tarjetas de impacto, iconografía técnica y estilos visuales adaptables para el segmento proveedor. | 2h | Jhon Deyner Catacora Tupa | Completed |
+| US46 | Información para Asset Owner | TSK-LP-06 | Maquetación HTML de sección Asset Owner | Estructuración del contenido dirigido a plantas industriales mineras, enfocado en el cumplimiento de PCR y mitigación de downtime. | 3h | Jhon Deyner Catacora Tupa | Completed |
+| US46 | Información para Asset Owner | TSK-LP-07 | Estilos CSS y diseño responsivo para Asset Owner | Aplicación de reglas CSS, diseño en rejilla (grid) y disposición adaptable de métricas de confiabilidad para clientes mineros. | 2h | Jhon Deyner Catacora Tupa | Completed |
+| US47 | Registro desde call-to-action segmentado | TSK-LP-08 | Implementación de botones Call-to-Action segmentados | Creación de botones de acción en navbar, hero y secciones de segmento con redirección parametrizada para registro. | 2h | Jhon Deyner Catacora Tupa | Completed |
+| US47 | Registro desde call-to-action segmentado | TSK-LP-09 | Componente modal interactivo de solicitud de demo | Desarrollo del modal emergente en JavaScript para capturar datos de contacto, validación de inputs y cierre accesible. | 4h | Jhon Deyner Catacora Tupa | Completed |
+| US48 | Cambio de idioma | TSK-LP-10 | Creación de diccionarios de traducción (ES / EN) | Elaboración de diccionarios estructurados con todos los textos, títulos y etiquetas del Landing Page en español e inglés. | 4h | Jhon Deyner Catacora Tupa | Completed |
+| US48 | Cambio de idioma | TSK-LP-11 | Motor de internacionalización (i18n engine) | Implementación del script en JavaScript plano para conmutación dinámica del DOM según `data-i18n` y persistencia en LocalStorage. | 4h | Jhon Deyner Catacora Tupa | Completed |
+| US48 | Cambio de idioma | TSK-LP-12 | Conmutador visual de idioma (Language Switcher) | Integración de botones interactivos de selección EN/ES en el header de escritorio y menú drawer móvil con estados activos. | 2h | Jhon Deyner Catacora Tupa | Completed |
+
+#### 5.2.1.4. Development Evidence for Sprint Review.
+
+A continuación, se presenta el registro consolidado de la evidencia de desarrollo durante el Sprint 1 correspondiente a la implementación completa del Landing Page en el repositorio [`edgewatch-website`](https://github.com/upc-pre-202620-1asi0730-16712-wrunners/edgewatch-website). La tabla detalla cada commit realizado bajo el estándar Conventional Commits, la rama de origen según el modelo Gitflow simplificado, el identificador hash, el mensaje de commit, el resumen de las modificaciones implementadas y la fecha de registro:
+
+| Repository | Branch | CommitId | Commit Message | Commit MessageBody (resumen) | Committed on |
+|---|---|---|---|---|:---:|
+| edgewatch-website | feature/scafolding-setup | 218d95e | chore: first commit | Inicialización del repositorio y estructura básica de directorios. | 2026-09-10 |
+| edgewatch-website | feature/scaffolding-setup | 0f7b5fa | chore: initial scaffolding | Configuración base del proyecto web con index.html y directorios de soporte. | 2026-09-10 |
+| edgewatch-website | feature/landing-page | bef49c4 | chore: add landing page image assets | Carga y optimización de recursos gráficos, imágenes del producto y logos. | 2026-09-12 |
+| edgewatch-website | feature/landing-page | 6559637 | style: add landing page stylesheet | Hoja de estilos CSS3 global con variables de diseño, layout y tipografía. | 2026-09-12 |
+| edgewatch-website | feature/landing-page | fa2b508 | feat: update page metadata for landing page | Configuración de metaetiquetas SEO, Open Graph y viewport adaptable. | 2026-09-12 |
+| edgewatch-website | feature/landing-page | fa92fb5 | feat: add site header and navigation | Construcción de navbar adaptable con menú hamburguesa para dispositivos móviles. | 2026-09-12 |
+| edgewatch-website | feature/landing-page | b033e01 | feat: add hero section | Maquetación del banner principal con propuesta de valor y botones CTA primarios. | 2026-09-12 |
+| edgewatch-website | feature/landing-page | 9fcfbef | feat: add problem section | Bloque estructurado con las tarjetas del costo y problemática de diagnóstico. | 2026-09-12 |
+| edgewatch-website | feature/landing-page | 4a5d2c6 | feat: add HVOF provider section | Sección dedicada al segmento Recuperation Supplier y trazabilidad de lotes. | 2026-09-12 |
+| edgewatch-website | feature/landing-page | 67e0d0b | feat: add solution section | Presentación interactiva de las capacidades centrales de la plataforma EdgeWatch. | 2026-09-12 |
+| edgewatch-website | feature/landing-page | 86e0552 | feat: add plant/asset owner section | Sección enfocada en el segmento Asset Owner, confiabilidad y cumplimiento PCR. | 2026-09-12 |
+| edgewatch-website | feature/landing-page | 91f71db | feat: add how-it-works section | Sección paso a paso del flujo de captura de telemetría y diagnóstico. | 2026-09-12 |
+| edgewatch-website | feature/landing-page | 77b5656 | feat: add testimonials section | Carrusel de testimonios y validación social con clientes de la industria. | 2026-09-12 |
+| edgewatch-website | feature/landing-page | 1e51489 | feat: add real-time alerts section | Bloque explicativo del sistema de alertas en tiempo real y componentes críticos. | 2026-09-12 |
+| edgewatch-website | feature/landing-page | 69e3e3b | feat: add plans section | Tabla comparativa de planes de suscripción mensual según volumen de celdas. | 2026-09-12 |
+| edgewatch-website | feature/landing-page | fff6dda | feat: add FAQ section | Componente interactivo tipo acordeón con preguntas y respuestas frecuentes. | 2026-09-12 |
+| edgewatch-website | feature/landing-page | 6204245 | feat: add site footer | Pie de página con formulario de newsletter, enlaces a redes y aviso legal. | 2026-09-12 |
+| edgewatch-website | feature/landing-page | d1374ba | feat: add demo request modal | Modal emergente con formulario de contacto y solicitud de demostración. | 2026-09-12 |
+| edgewatch-website | feature/landing-page | 5138ba5 | feat: wire up landing page interactivity | Scripts JavaScript nativos para animaciones, control de modales y toggles. | 2026-09-12 |
+| edgewatch-website | develop | 3f5b837 | Merge pull request #1 from feature/landing-page | Fusión formal de la rama de maquetación e interactividad en la rama develop. | 2026-09-12 |
+| edgewatch-website | feature/internatiolization | 3aee66f | feat: add i18n translation dictionaries for en/es | Definición de diccionarios de internacionalización estructurados (inglés/español). | 2026-09-12 |
+| edgewatch-website | feature/internatiolization | 32055b1 | feat: add i18n engine to apply language and persist preference | Motor de traducción en JavaScript y guardado de idioma en LocalStorage. | 2026-09-12 |
+| edgewatch-website | feature/internatiolization | 8cef94b | style: add language switcher UI styles | Reglas de estilo visual y animación para botones de selección de idioma. | 2026-09-12 |
+| edgewatch-website | feature/internatiolization | d900b26 | feat: internationalize landing page markup | Integración de atributos data-i18n en todas las etiquetas del documento HTML. | 2026-09-12 |
+| edgewatch-website | feature/internatiolization | 9ea9f47 | feat: internationalize plans section markup | Internacionalización de términos específicos de precios y planes comerciales. | 2026-09-12 |
+| edgewatch-website | feature/internatiolization | a32a08d | feat: localize demo modal submit feedback | Respuestas dinámicas traducibles para el envío de solicitud de demostración. | 2026-09-12 |
+| edgewatch-website | develop | 4090337 | Merge pull request #2 from feature/internatiolization | Integración de soporte bilingüe en develop tras aprobación de pull request. | 2026-09-12 |
+| edgewatch-website | feature/accessibility | 22a0929 | fix: translate missing Spanish "About the Product" footer link | Corrección de traducción faltante en enlace del producto en el footer. | 2026-09-13 |
+| edgewatch-website | feature/accessibility | fd76769 | feat: add global accessibility CSS utilities | Utilidades CSS para visibilidad de foco de teclado y cumplimiento WCAG. | 2026-09-13 |
+| edgewatch-website | feature/accessibility | aed7e66 | feat: add skip link and landmark roles/headings for screen readers | Enlaces directos al contenido principal e hitos semánticos ARIA en layout. | 2026-09-13 |
+| edgewatch-website | feature/accessibility | 09b1dc4 | feat: make primary/mobile navigation and language switcher accessible | Soporte de navegación por teclado y etiquetas accesibles en menú principal. | 2026-09-13 |
+| edgewatch-website | feature/accessibility | 8961e83 | feat: make FAQ accordion screen-reader and keyboard accessible | Control de teclado (Enter/Espacio) y aria-expanded en acordeón de FAQs. | 2026-09-13 |
+| edgewatch-website | feature/accessibility | 91c1017 | feat: make testimonials carousel screen-reader accessible | Roles de carrusel accesible y compatibilidad completa con lectores de pantalla. | 2026-09-13 |
+| edgewatch-website | feature/accessibility | 421c082 | feat: make demo request modal accessible | Atributos role="dialog", aria-modal="true" y gestión de foco en modal de demo. | 2026-09-13 |
+| edgewatch-website | feature/accessibility | cf5d263 | feat: hide remaining decorative icons and glyphs from assistive tech | Aplicación de aria-hidden="true" en iconos ornamentales para evitar ruido auditivo. | 2026-09-13 |
+| edgewatch-website | develop | 7cade60 | Merge pull request #3 from feature/accessibility | Fusión de mejoras de accesibilidad digital WCAG 2.1 nivel AA en develop. | 2026-09-13 |
+| edgewatch-website | main | 4dbdc9e | Release v1.0.0 | Etiquetado y publicación de la primera versión estable de producción. | 2026-09-13 |
+| edgewatch-website | develop | c67a1a1 | Merge branch 'main' into develop | Sincronización de develop con el tag de producción v1.0.0. | 2026-09-13 |
+
+#### 5.2.1.5. Execution Evidence for Sprint Review.
+
+A continuación, se documenta la evidencia de ejecución del Landing Page implementado y desplegado para el Sprint 1, validando el cumplimiento de cada una de las historias de usuario mediante las funcionalidades e interfaces visibles en producción:
+
+| ID | User Story | Evidencia en Landing Page |
+|:---:|---|---|
+| **US44** | Conocer la propuesta de valor | Visualización de la **Hero Section** con el titular de impacto (*"Stop chasing the data that your own team already generates"*), subtítulo explicativo enfocado en procesos térmicos HVOF, botones de llamada a la acción (*Request demo* y *See how it works*), visual del producto y despliegue de las secciones **The Problem** y **The Solution** con tarjetas explicativas de valor. |
+| **US45** | Información para Recuperation Supplier | Despliegue de la sección dedicada **Recuperation Providers**, detallando los dolores operativos resueltos: trazabilidad de parámetros de rociado vinculados a órdenes de trabajo (OF/WO), detección de desvíos en cabina y emisión de respaldo documental para clientes mineros. |
+| **US46** | Información para Asset Owner | Presentación de la sección orientada a **Mining & Industrial Plants**, resaltando la mitigación del costo de paradas no programadas, visibilidad consolidada de componentes recubiertos y monitoreo del cumplimiento de vida útil en campo contra el PCR (*Planned Component Replacement*). |
+| **US47** | Registro desde call-to-action segmentado | Integración de botones **Call-to-Action (CTA)** en la barra de navegación, hero banner y tabla de planes. Al interactuar, se despliega el **Modal de Solicitud de Demostración** con formulario accesible de contacto para derivar al usuario al registro según su perfil de organización. |
+| **US48** | Cambio de idioma | Funcionamiento del componente interactivo **Language Switcher** en navbar superior y menú móvil (EN/ES). La activación conmuta de forma instantánea todo el DOM mediante el motor i18n sin refrescar la ventana y persiste la preferencia de idioma del visitante en `localStorage`. |
+
+#### 5.2.1.6. Services Documentation Evidence for Sprint Review.
+Durante el Sprint 1 no se trabajaron endpoints documentados, ya que el alcance se centró exclusivamente enel desarrollo del Landing Page. La documentación OpenAPI comenzará en el Sprint 2.
+
+#### 5.2.1.7. Software Deployment Evidence for Sprint Review.
+Durante el Sprint 1, se realizó el despliegue de la landing page del proyecto utilizando **GitHub Pages**.
+**Repositorio**: edgewatch-website
+**URL de producción**: https://upc-pre-202620-1asi0730-16712-wrunners.github.io/edgewatch-website/
+**Rama desplegada**: main
+
+#### 5.2.1.8. Team Collaboration Insights during Sprint.
+
+![Collaboration Insights](assets/img/chapter-v/collaboration-insights.png)
+
 ## 5.3. Validation Interviews.
 ### 5.3.1. Diseño de Entrevistas.
 ### 5.3.2. Registro de Entrevistas.
