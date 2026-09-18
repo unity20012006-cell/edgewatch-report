@@ -1,4 +1,4 @@
-﻿<div align="center">
+<div align="center">
  <img src="assets/img/logoUPC.png">
 
 # UNIVERSIDAD PERUANA DE CIENCIAS APLICADAS
@@ -17,9 +17,9 @@ Docente: Sanchez Seña, Alberto Wilmer
 
 | Código     | Apellidos         | Nombres           |
 |------------|-------------------|-------------------| 
-| u20241b962 | Navarro Aldoradin | Carolina Celeste  |
-| u202315628 | Alvarez Falen     | Esteban Valentino |
-|            | Catacora Tupa     | Jhon Deyner       |
+| U20241b962 | Navarro Aldoradin | Carolina Celeste  |
+| U202315628 | Alvarez Falen     | Esteban Valentino |
+| U202425159 | Catacora Tupa     | Jhon Deyner       |
 |            | Vasquez Laos      | Sebastian Andrews |
 |            | Yopla Romero      | Jonathan Alberto  |
 
@@ -160,11 +160,11 @@ Ser la plataforma de referencia en Latinoamérica para el monitoreo y la trazabi
 
 ### 1.1.2. Perfiles de integrantes del equipo
 
-| Foto de participante | Nombres y apellidos | Código de estudiante | Descripción de carrera | Principales conocimiento técnicos y habilidades |
-|:---|:---|:---|:---|:---|
-| <img src="assets/img/chapter-i/startup-profile/carolina-navarro.jpeg" width="150"> | Carolina Celeste Navarro Aldoradin | u20241b962 | Ingeniería de Software, Universidad Peruana de Ciencias Aplicadas | Cuento con conocimiento del lenguaje Java, C#, C++, Javascript, Python y Ladder. Asimismo, cuento con experiencia en proyectos de integración, monitoreo e IoT en entornos industriales. |
-| <img src="assets/img/chapter-i/startup-profile/Esteban-alvarez.png" width="150"> | Esteban Valentino Alvarez Falen | U202315628 | Ingeniería de Software, Universidad Peruana de Ciencias Aplicadas | Soy un estudiante de la carrera de Ingeniería de Software, estoy en la universidad UPC. No cuento con experiencia laboral en programas, sin embargo a lo largo de mi carrera estoy realizando proyectos para mejorar en código, trabajo en equipo y organización de proyectos. Soy una persona que le gusta pensar en soluciones y encontrar motivaciones para innovar e implementar. |
-| <img src="assets/img/chapter-i/startup-profile/jhon-catacora.jpeg" width="150"> | Jhon Deyner Catacora Tupa | U202425159 | Ingeniería de Software, Universidad Peruana de Ciencias Aplicadas | Estudiante de la carrera de Ingeniería de software, me considero una persona colaborativa, con facilidad para comunicar ideas y trabajar en equipo, además de mantener siempre una actitud abierta al aprendizaje y la mejora continua. Estas cualidades me han permitido aportar soluciones innovadoras y crecer tanto en lo técnico como en lo personal. |
+| Foto | Nombres y apellidos | Código | Descripción de carrera | Principales conocimientos técnicos y habilidades |
+|:---|:-----------|:---|:----------------------------|:--------------------------------------------------------------|
+| ![Carolina Navarro](assets/img/chapter-i/startup-profile/carolina-navarro.jpeg){width=1in} | Carolina Celeste Navarro Aldoradin | u20241b962 | Ingeniería de Software, Universidad Peruana de Ciencias Aplicadas | Cuento con conocimiento del lenguaje Java, C#, C++, Javascript, Python y Ladder. Asimismo, cuento con experiencia en proyectos de integración, monitoreo e IoT en entornos industriales. |
+| ![Esteban Alvarez](assets/img/chapter-i/startup-profile/Esteban-alvarez.png){width=1in} | Esteban Valentino Alvarez Falen | U202315628 | Ingeniería de Software, Universidad Peruana de Ciencias Aplicadas | Soy un estudiante de la carrera de Ingeniería de Software, estoy en la universidad UPC. No cuento con experiencia laboral en programas, sin embargo a lo largo de mi carrera estoy realizando proyectos para mejorar en código, trabajo en equipo y organización de proyectos. Soy una persona que le gusta pensar en soluciones y encontrar motivaciones para innovar e implementar. |
+| ![Jhon Catacora](assets/img/chapter-i/startup-profile/jhon-catacora.jpeg){width=1in} | Jhon Deyner Catacora Tupa | U202425159 | Ingeniería de Software, Universidad Peruana de Ciencias Aplicadas | Estudiante de la carrera de Ingeniería de software, me considero una persona colaborativa, con facilidad para comunicar ideas y trabajar en equipo, además de mantener siempre una actitud abierta al aprendizaje y la mejora continua. Estas cualidades me han permitido aportar soluciones innovadoras y crecer tanto en lo técnico como en lo personal. |
 
 
 ## 1.2. Solution Profile
@@ -284,17 +284,16 @@ El Lean UX Process permite a WebRunners validar de forma temprana las creencias 
 
 #### 1.2.2.1. Lean UX Problem Statements.
 
-Siguiendo la indicación del enunciado, se elabora un único Problem Statement para todo el proyecto, considerando en él ambos segmentos objetivo.
+***El estado actual del*** *mercado de recubrimiento por proyección térmica industrial (HVOF) se ha centrado principalmente en la entrega del recubrimiento como un servicio físico a clientes de minería e industria pesada, en la experiencia del operador como el mecanismo principal para detectar desviaciones en el proceso, y en flujos de trabajo donde los parámetros de proceso generados por el PLC de la máquina permanecen en registros locales que nunca se vinculan a la orden de trabajo, al componente del cliente ni a su vida útil esperada.*
 
-***The current state of*** *the industrial thermal spray coating market (HVOF) has focused mainly on delivering the coating as a physical service to mining and heavy-industry clients, on operator expertise as the primary mechanism for detecting process deviations, and on workflows where process parameters generated by the machine PLC remain in local logs that are never linked to the work order, the client component, or its expected service life.*
+***Lo que los productos/servicios existentes no logran abordar es*** *la brecha entre la telemetría que el equipo HVOF ya genera y la capacidad de la organización para convertirla en trazabilidad verificable, diagnósticos oportunos de fallas que apunten a una pieza específica de la máquina, y aprendizaje retrospectivo sobre el desempeño real en campo de los componentes recubiertos frente a su objetivo de Reemplazo Planificado de Componentes (PCR).*
 
-***What existing products/services fail to address is*** *the gap between the telemetry the HVOF equipment already produces and the organization's ability to turn it into verifiable traceability, timely fault diagnosis pointing to a specific machine part, and retrospective learning about how coated components actually perform in the field against their Planned Component Replacement (PCR) target.*
+***Nuestro producto/servicio abordará esta brecha al*** *proporcionar una plataforma web que ingesta telemetría del proceso de rociado en tiempo real a través de una API RESTful, vincula cada sesión de rociado con su orden de fabricación (OF), orden de trabajo (WO), cliente y modelo de componente, genera alertas cuando los parámetros se encuentran fuera de los rangos nominales del equipo, aplica un catálogo configurable de reglas causa-efecto para identificar la pieza de la máquina sospechosa, y registra la vida útil en campo para contrastar el desempeño real frente al PCR comprometido.*
 
-***Our product/service will address this gap by*** *providing a web platform that ingests spray process telemetry in real time through a RESTful API, links every spray session to its manufacturing order (OF), work order (WO), client and component model, raises alerts when parameters fall outside the equipment's nominal ranges, applies a configurable cause-effect rule catalog to identify the suspect machine part, and records field service life to compare actual performance against the committed PCR.*
+***Nuestro enfoque inicial estará en*** *proveedores especializados de servicios de recubrimiento HVOF que operan en el Perú, que atienden a clientes de minería y tienen la exigencia de demostrar la calidad del proceso, y de forma secundaria en plantas industriales que operan una línea de proyección térmica propia (in-house).*
 
-***Our initial focus will be*** *specialized HVOF coating service providers operating in Peru that serve mining clients and are required to demonstrate process quality, and secondarily industrial plants that operate an in-house thermal spray line.*
+***Sabremos que tenemos éxito cuando veamos*** *a los proveedores de servicios de recubrimiento emitir evidencia de calidad generada por la plataforma para al menos el 80% de sus órdenes de trabajo entregadas, una reducción de al menos el 40% en el tiempo necesario para determinar la causa probable de una parada de equipo, y al menos el 60% de los componentes retornados con su vida útil en campo registrada y contrastada contra su objetivo de PCR dentro de la plataforma.*
 
-***We'll know we are successful when we see*** *coating service providers issuing quality evidence generated by the platform for at least 80% of their delivered work orders, a reduction of at least 40% in the time required to determine the probable cause of an equipment stoppage, and at least 60% of returned components having their field service life recorded and compared against their PCR target within the platform.*
 
 #### 1.2.2.2. Lean UX Assumptions.
 
@@ -350,68 +349,68 @@ Se formula un hypothesis statement por cada feature assumption enunciado en la s
 ---
 **Hypothesis Statement 01. Ingesta de telemetría de proceso**
 
-**We believe we will achieve** an increase in the number of spray sessions with complete process records stored in the platform  
-**If** Quality Engineers at HVOF coating service providers and Maintenance Supervisors at in-house coating plants  
-**Attain** a permanent, queryable record of the conditions under which every spray session was executed  
-**With** a RESTful telemetry ingestion endpoint that registers process readings throughout the spray session.
+**Creemos que lograremos** un incremento en la cantidad de sesiones de rociado con registros completos de proceso almacenados en la plataforma  
+**Si** los Ingenieros de Calidad en empresas de servicio de recubrimiento HVOF y los Supervisores de Mantenimiento en plantas de recubrimiento in-house  
+**Obtienen** un registro permanente y consultable de las condiciones bajo las cuales se ejecutó cada sesión de rociado  
+**Con** un endpoint RESTful de ingesta de telemetría que registre las lecturas de proceso durante toda la sesión de rociado.
 
 ---
 **Hypothesis Statement 02. Vinculación de la sesión con OF, WO, cliente y modelo**
 
-**We believe we will achieve** an increase in the percentage of work orders that can be fully traced from client to process conditions  
-**If** Quality Engineers at HVOF coating service providers  
-**Attain** the ability to reconstruct the complete history of any coated component on demand  
-**With** the linking of every spray session to its manufacturing order, work order, client and component model.  
+**Creemos que lograremos** un incremento en el porcentaje de órdenes de trabajo que pueden ser completamente trazadas desde el cliente hasta las condiciones de proceso  
+**Si** los Ingenieros de Calidad en empresas de servicio de recubrimiento HVOF  
+**Obtienen** la capacidad de reconstruir la historia completa de cualquier componente recubierto a demanda  
+**Con** la vinculación de cada sesión de rociado con su orden de fabricación, orden de trabajo, cliente y modelo de componente.  
 ---
 **Hypothesis Statement 03. Rangos nominales y detección de desviaciones**  
 
-**We believe we will achieve** a reduction in the number of components coated outside specification without detection  
-**If** Quality Engineers and spray booth Operators  
-**Attain** automatic identification of out-of-tolerance conditions without depending on continuous manual supervision  
-**With** per-equipment nominal parameter range configuration and automatic deviation detection.  
+**Creemos que lograremos** una reducción en la cantidad de componentes recubiertos fuera de especificación sin ser detectados  
+**Si** los Ingenieros de Calidad y los Operadores de cabina de rociado  
+**Obtienen** la identificación automática de condiciones fuera de tolerancia sin depender de una supervisión manual continua  
+**Con** la configuración de rangos nominales de parámetros por equipo y la detección automática de desviaciones.  
 ---
 **Hypothesis Statement 04. Alertas en tiempo real**  
 
-**We believe we will achieve** a reduction in the average time between a process deviation and the response of the responsible person  
-**If** spray booth Operators and Maintenance Supervisors  
-**Attain** awareness of a deviation while the session is still running rather than after it ends  
-**With** a real-time alerting module that notifies the responsible user when a deviation or fault is detected.  
+**Creemos que lograremos** una reducción en el tiempo promedio entre una desviación del proceso y la respuesta del responsable  
+**Si** los Operadores de cabina de rociado y los Supervisores de Mantenimiento  
+**Obtienen** conocimiento oportuno de una desviación mientras la sesión aún está en curso y no después de que finalice  
+**Con** un módulo de alertas en tiempo real que notifique al usuario responsable cuando se detecte una desviación o falla.  
 ---
 **Hypothesis Statement 05. Diagnóstico asistido por reglas causa-efecto**  
 
-**We believe we will achieve** a reduction of at least 40% in the time required to determine the probable cause of an equipment stoppage  
-**If** Maintenance Supervisors and maintenance technicians  
-**Attain** a diagnosis that points to the specific machine part involved instead of a raw fault code  
-**With** a configurable cause-effect rule catalog that correlates the fault with a suspect machine part.
+**Creemos que lograremos** una reducción de al menos el 40% en el tiempo requerido para determinar la causa probable de una parada de equipo  
+**Si** los Supervisores de Mantenimiento y los técnicos de mantenimiento  
+**Obtienen** un diagnóstico que señale la pieza específica de la máquina involucrada en lugar de un código de falla sin procesar  
+**Con** un catálogo configurable de reglas causa-efecto que correlacione la falla con una pieza de máquina sospechosa.
 ---
 **Hypothesis Statement 06. Detección de patrones recurrentes de falla**  
 
-**We believe we will** achieve a reduction in unplanned stoppages during committed production windows    
-**If** Maintenance Supervisors at both coating service providers and in-house coating plants  
-**Attain** early visibility of machine parts that are failing repeatedly  
-**With** automatic detection of recurring fault patterns grouped by machine part and equipment.  
+**Creemos que lograremos** una reducción en las paradas no planificadas durante las ventanas de producción comprometidas  
+**Si** los Supervisores de Mantenimiento tanto en empresas de servicio de recubrimiento como en plantas con línea in-house  
+**Obtienen** visibilidad temprana de las piezas de máquina que están fallando reiteradamente  
+**Con** la detección automática de patrones recurrentes de falla agrupados por pieza de máquina y por equipo.  
 ---
 **Hypothesis Statement 07. Certificados de calidad por orden de trabajo**  
 
-**We believe we will achieve** quality evidence generated by the platform for at least 80% of delivered work orders  
-**If** Quality Engineers at HVOF coating service providers  
-**Attain** the ability to hand their mining clients documented proof that the batch was coated within tolerance  
-**With** exportable quality certificate generation per work order.  
+**Creemos que lograremos** evidencia de calidad generada por la plataforma para al menos el 80% de las órdenes de trabajo entregadas  
+**Si** los Ingenieros de Calidad en empresas de servicio de recubrimiento HVOF  
+**Obtienen** la capacidad de entregar a sus clientes mineros un respaldo documentado de que el lote fue recubierto dentro de las tolerancias  
+**Con** la generación exportable de certificados de calidad por orden de trabajo.  
 ---
 **Hypothesis Statement 08. Registro de vida útil contra PCR**  
 
-**We believe we will achieve** field service life recorded and compared against PCR for at least 60% of returned components  
-**If** Quality Engineers and Maintenance Supervisors  
-**Attain** the ability to determine whether a premature field failure originated in the coating process or elsewhere  
-**With** field service life recording contrasted against the committed Planned Component Replacement target.  
+**Creemos que lograremos** que la vida útil en campo sea registrada y contrastada contra el PCR para al menos el 60% de los componentes retornados  
+**Si** los Ingenieros de Calidad y los Supervisores de Mantenimiento  
+**Obtienen** la capacidad de determinar si una falla prematura en campo se originó en el proceso de recubrimiento o por una causa externa  
+**Con** el registro de vida útil en campo contrastado contra el objetivo de Reemplazo Planificado de Componentes (PCR) comprometido.  
 --- 
 
 **Hypothesis Statement 09. Reportes de tasa de falla por cliente y modelo**  
 
-**We believe we will achieve** an increase in the number of process improvement decisions supported by historical evidence  
-**If** Quality Engineers and Plant Managers  
-**Attain** visibility of failure patterns that are not observable from individual work orders  
-**With** failure rate reports grouped by client and by component model.
+**Creemos que lograremos** un incremento en la cantidad de decisiones de mejora de procesos respaldadas por evidencia histórica  
+**Si** los Ingenieros de Calidad y los Jefes de Planta  
+**Obtienen** visibilidad sobre patrones de falla que no son observables a partir de órdenes de trabajo individuales  
+**Con** reportes de tasa de fallas agrupados por cliente y por modelo de componente.
 ---
 
 ### 1.2.2.4. Lean UX Canvas.
@@ -567,8 +566,7 @@ A partir del análisis anterior, WebRunners establece cuatro estrategias con sus
 
 
 - **Estrategia 2. Costo de entrada bajo frente a soluciones intensivas en hardware**  
-  Frente a Tecnar y Oerlikon Metco, cuyas soluciones exigen inversión de capital significativa, EdgeWatch
-- compite por accesibilidad, aprovechando la telemetría que el PLC del equipo ya genera.
+  Frente a Tecnar y Oerlikon Metco, cuyas soluciones exigen inversión de capital significativa, EdgeWatch compite por accesibilidad, aprovechando la telemetría que el PLC del equipo ya genera.  
   **Tácticas**: adoptar un modelo de suscripción mensual por equipo monitoreado, sin inversión inicial en hardware; ofrecer un periodo de prueba operando sobre datos históricos del propio cliente; e integrarse mediante un gateway con API REST que no requiere modificar el PLC ni el software del fabricante del equipo.
 
 
@@ -688,13 +686,13 @@ Perfiles entrevistados: ingeniero de confiabilidad, planner de mantenimiento, su
 
 #### Ficha de User Persona 1 — Segmento 1: Empresas de servicio especializado en recubrimiento HVOF
 
-![Rosa Miranda Alegria](./assets/img/chapter-ii/neefinding/User_Persona-Rosa_Miranda_Alegria.png)
+![Rosa Miranda Alegria](./assets/img/chapter-ii/neefinding/User_Persona-Rosa_Miranda_Alegria.png){width=80%}
 
 ---
 
 #### Ficha de User Persona 2 — Segmento 2: Plantas industriales con línea de recubrimiento in-house
 
-![Jorge Salinas Paredes](./assets/img/chapter-ii/neefinding/User_Persona-Jorge_Salinas_Paredes.png)
+![Jorge Salinas Paredes](./assets/img/chapter-ii/neefinding/User_Persona-Jorge_Salinas_Paredes.png){width=80%}
 
 ### 2.3.2. User Task Matrix.
 
@@ -741,11 +739,11 @@ Perfiles entrevistados: ingeniero de confiabilidad, planner de mantenimiento, su
 
 #### Empathy Map — Rosa Miranda (Segmento 1)
 
-![Rosa Miranda Alegria](./assets/img/chapter-ii/neefinding/Empathy_Map-Rosa_Miranda_Alegria.png)
+![Rosa Miranda Alegria](./assets/img/chapter-ii/neefinding/Empathy_Map-Rosa_Miranda_Alegria.png){width=80%}
 
 #### Empathy Map — Jorge Salinas (Segmento 2)
 
-![Jorge Salinas Paredes](./assets/img/chapter-ii/neefinding/Empathy_Map-Jorge_Salinas_Paredes.png)
+![Jorge Salinas Paredes](./assets/img/chapter-ii/neefinding/Empathy_Map-Jorge_Salinas_Paredes.png){width=80%}
 
 ## 2.4. Big Picture Event Storming.
 
@@ -1474,9 +1472,8 @@ Los Criterios de Aceptación se redactan en formato Gherkin (Given-When-Then), e
 
 El Impact Map de EdgeWatch conecta los objetivos de negocio de WebRunners con los User Personas identificados en la sección 2.3.1, los cambios de comportamiento que se espera provocar en ellos (impacts), los entregables del producto que provocan esos cambios (deliverables) y las User Stories que los materializan. El artefacto se elaboró en UXPressia a partir de las fichas de User Persona previamente creadas en la misma herramienta; a continuación se presenta su contenido y una representación en Mermaid para su lectura dentro del informe.
 
-Los Business Goals cumplen los criterios SMART: son específicos, medibles, alcanzables, relevantes para el modelo de negocio de suscripción de dos segmentos y acotados en el tiempo. Los Actors corresponden a los dos User Personas principales, uno por segmento: **Carlos Quispe**, Ingeniero de Calidad de una empresa de servicio de recubrimiento HVOF (Recuperation Supplier), y **Rocío Mendoza**, Ingeniera de Confiabilidad de una empresa minera (Asset Owner). Cuando un goal requiere un rol secundario del mismo segmento, se indica explícitamente.
+Los Business Goals cumplen los criterios SMART: son específicos, medibles, alcanzables, relevantes para el modelo de negocio de suscripción de dos segmentos y acotados en el tiempo. Los Actors corresponden a los dos User Personas principales, uno por segmento: **Rosa Miranda**, Ingeniera de Calidad de una empresa de servicio de recubrimiento HVOF (Recuperation Supplier), y **Jorge Salinas**, Jefe de Mantenimiento de una planta industrial con línea in-house. Cuando un goal requiere un rol secundario del mismo segmento, se indica explícitamente.
 
-*[Insertar captura del Impact Map elaborado en UXPressia]*
 
 ### Business Goal 1 — Adopción del segmento Recuperation Supplier
 
@@ -1489,7 +1486,7 @@ Los Business Goals cumplen los criterios SMART: son específicos, medibles, alca
 | Jorge Salinas | Detecta desviaciones de proceso que hoy pasan inadvertidas porque el PLC no las alarma | Configuración de rangos nominales y detección automática de desviaciones | Como ingeniero de calidad, deseo configurar los rangos nominales de cada parámetro de proceso por celda, para que el sistema detecte desviaciones automáticamente (US09). Como ingeniero de calidad, deseo que el sistema marque automáticamente cada lectura que salga del rango nominal de la celda, para identificar desviaciones sin supervisión manual (US21). |
 | Rosa Miranda | Reconoce en el Landing Page que la plataforma resuelve su problema de trazabilidad y solicita el registro | Landing Page con sección y call-to-action específicos para el segmento | Como visitante del segmento Recuperation Supplier, deseo acceder a la información específica para empresas que operan procesos HVOF, para identificar si la propuesta responde a mis necesidades (US45). Como visitante, deseo iniciar el registro desde el call-to-action de mi segmento, para llegar directamente a la vista de registro correspondiente en la Web Application (US47). |
 
-![Impact Mapping 1](assets/img/chapter-iii/Impact%20map%201.png)
+![Impact Mapping 1](assets/img/chapter-iii/impact-map-1.png){width=80%}
 
 ### Business Goal 2 — Evidencia de calidad aceptada por el cliente
 
@@ -1501,7 +1498,7 @@ Los Business Goals cumplen los criterios SMART: son específicos, medibles, alca
 | Jorge Salinas  | Responde a una auditoría del cliente con evidencia exportable en lugar de con registros en papel | Exportación de historial de sesiones y certificados por periodo | Como ingeniero de calidad, deseo exportar el historial de sesiones y certificados de un periodo en formato CSV o PDF, para presentarlo durante una auditoría del cliente (US37). Como supervisor de operación, deseo generar el reporte de una sesión con el resumen de lecturas, desviaciones y fallas, para revisar el resultado de la corrida (US36). |
 | Rosa Miranda | Acepta el certificado de EdgeWatch como respaldo formal del trabajo del proveedor | Portal de consulta de certificados para el cliente, con cumplimiento por parámetro y sin exposición de valores crudos | Como ingeniera de confiabilidad, deseo consultar el certificado de calidad de un componente entregado por mi proveedor, para verificar que fue recubierto dentro de tolerancia (US41). |
 
-![Impact Mapping 2](assets/img/chapter-iii/Impact%20map%202.png)
+![Impact Mapping 2](assets/img/chapter-iii/impact-map-2.png){width=80%}
 
 ### Business Goal 3 — Reducción del tiempo de diagnóstico de fallas
 
@@ -1514,7 +1511,7 @@ Los Business Goals cumplen los criterios SMART: son específicos, medibles, alca
 | Jorge Salinas | Registra la causa raíz confirmada para que el conocimiento no se pierda cuando cambie el personal | Confirmación de causa raíz y catálogo de reglas editable | Como supervisor de mantenimiento de máquina, deseo confirmar o corregir la causa raíz y registrar la acción correctiva de un caso de falla, para que el conocimiento quede documentado en el sistema (US27). Como ingeniero de calidad, deseo crear, editar y desactivar reglas causa-efecto, para adaptar el diagnóstico a cada celda (US28). |
 | Jorge Salinas | Interviene una parte antes de que provoque una parada mayor | Detección de patrones recurrentes y alertas críticas | Como supervisor de mantenimiento de máquina, deseo que el sistema identifique cuando una misma parte acumula fallas del mismo tipo dentro de un periodo, para anticipar un problema mayor (US29). Como supervisor de mantenimiento de máquina, deseo recibir una alerta cuando se abra un caso de falla crítica o se detecte un patrón recurrente, para intervenir oportunamente (US32). |
 
-![Impact Mapping 3](assets/img/chapter-iii/Impact%20map%203.png)
+![Impact Mapping 3](assets/img/chapter-iii/impact-map-3.png){width=80%}
 
 ### Business Goal 4 — Adopción del segmento Asset Owner
 
@@ -1528,7 +1525,7 @@ Los Business Goals cumplen los criterios SMART: son específicos, medibles, alca
 | Jorge Salinas | Analiza la sesión de origen de cada falla prematura reportada por la mina, en lugar de enterarse por un reclamo sin datos | Correlación automática de falla prematura con la sesión de rociado original | Como ingeniero de calidad, deseo que al registrarse una falla prematura el sistema me presente la sesión de rociado original del componente, para determinar si el origen estuvo en el recubrimiento (US43). |
 | Jorge Salinas | Reconoce en el Landing Page el valor de la vista consolidada y solicita el registro | Landing Page con sección y call-to-action para Asset Owner | Como visitante del segmento Asset Owner, deseo acceder a la información específica para empresas propietarias de activos, para identificar si la propuesta responde a mis necesidades (US46). |
 
-![Impact Mapping 4](assets/img/chapter-iii/Impact%20map%204.png)
+![Impact Mapping 4](assets/img/chapter-iii/impact-map-4.png){width=80%}
 
 ### Síntesis
 
@@ -1547,11 +1544,11 @@ El Product Backlog reúne las 52 User Stories y 18 Technical Stories de la secci
 **Total estimado:** 271 Story Points.
 
 Herramienta: Trello.  
-URL pública del board: https://trello.com/invite/b/6aa234c58be8ea8121c19b01/ATTIe3d8df7c2304b434249a2328489667aeE6F8F69E/edgewatch-product-backlog
+URL pública del board: <https://trello.com/invite/b/6aa234c58be8ea8121c19b01/ATTIe3d8df7c2304b434249a2328489667aeE6F8F69E/edgewatch-product-backlog>
 
-<img src="assets/img/chapter-iii/product-backlog.jpeg">
+![Tablero de Product Backlog en Trello](assets/img/chapter-iii/product-backlog.jpeg){width=80%}
 
-<img src="assets/img/chapter-iii/product-backlog-epics.png">
+![Épicas del Product Backlog en Trello](assets/img/chapter-iii/product-backlog-epics.png){width=80%}
 
 | # Orden | User Story Id | Título | Descripción | Story Points (1 / 2 / 3 / 5 / 8) |
 |---|---|---|---|---|
@@ -1658,20 +1655,20 @@ El logotipo combina un isotipo (aguja de medición/gauge que traza un arco, en r
 
 La paleta reutiliza deliberadamente los colores ya empleados en el árbol de problemas del Capítulo I (sección 1.2.1) para los estados de causa/efecto, de modo que el mismo código cromático que se usó para diagnosticar el problema se convierte en el sistema de estados del producto que lo resuelve.
 
-| Rol | Color | Hex | Uso |
-|---|---|---|---|
-| Primario — Industrial Navy | 🟦 | `#0B2545` | Header, navegación, fondos de secciones destacadas, texto de marca |
-| Primario oscuro | 🟦 | `#071A33` | Footer, secciones de máximo contraste |
-| Secundario — Thermal Amber | 🟧 | `#FF7A00` | Botón primario / CTA, acentos, hover de enlaces |
-| Acento — Data Teal | 🟦 | `#00B4D8` | Enlaces en cuerpo de texto, series de datos en gráficos de telemetría |
-| Éxito / Nominal | 🟩 | `#2E7D32` (tinte `#C8E6C9`) | Parámetro dentro de rango, sesión sin desviaciones |
-| Advertencia / Alerta | 🟨 | `#FFB300` (tinte `#FFECB3`) | Desviación detectada, estado "En revisión" |
-| Crítico / Falla | 🟥 | `#C62828` (tinte `#EF9A9A`) | Parada de equipo, parámetro fuera de tolerancia, falla prematura en campo |
-| Información / En proceso | 🟦 | `#1565C0` (tinte `#90CAF9`) | Sesión en curso, estado neutro informativo |
-| Neutro 900 (texto) | ⬛ | `#1B1F27` | Texto principal |
-| Neutro 600 (texto secundario) | ⬜ | `#5B6472` | Metadatos, etiquetas, texto de apoyo |
-| Neutro 200 (bordes) | ⬜ | `#E2E6EB` | Bordes de tarjetas, separadores, tablas |
-| Neutro 50 (fondo) | ⬜ | `#F5F7FA` | Fondo de página, fondo de tabla alternado |
+| Rol | Hex | Uso |
+|---|---|---|
+| Primario — Industrial Navy | `#0B2545` | Header, navegación, fondos de secciones destacadas, texto de marca |
+| Primario oscuro | `#071A33` | Footer, secciones de máximo contraste |
+| Secundario — Thermal Amber | `#FF7A00` | Botón primario / CTA, acentos, hover de enlaces |
+| Acento — Data Teal | `#00B4D8` | Enlaces en cuerpo de texto, series de datos en gráficos de telemetría |
+| Éxito / Nominal | `#2E7D32` (tinte `#C8E6C9`) | Parámetro dentro de rango, sesión sin desviaciones |
+| Advertencia / Alerta | `#FFB300` (tinte `#FFECB3`) | Desviación detectada, estado "En revisión" |
+| Crítico / Falla | `#C62828` (tinte `#EF9A9A`) | Parada de equipo, parámetro fuera de tolerancia, falla prematura en campo |
+| Información / En proceso | `#1565C0` (tinte `#90CAF9`) | Sesión en curso, estado neutro informativo |
+| Neutro 900 (texto) | `#1B1F27` | Texto principal |
+| Neutro 600 (texto secundario) | `#5B6472` | Metadatos, etiquetas, texto de apoyo |
+| Neutro 200 (bordes) | `#E2E6EB` | Bordes de tarjetas, separadores, tablas |
+| Neutro 50 (fondo) | `#F5F7FA` | Fondo de página, fondo de tabla alternado |
 
 **Tipografía**
 
@@ -1858,28 +1855,30 @@ Cada ancla de sección (`#problema`, `#solucion`, `#segmentos`) se refleja como 
 ## 4.3. Landing Page UI Design.
 
 ### 4.3.1. Landing Page Wireframe.
-<div align="center">
- <img src="assets/img/chapter-iv/Wireframes.png" width="600" alt="Wireframe de EdgeWatch">
-</div>
+
+![Wireframe de EdgeWatch](assets/img/chapter-iv/Wireframes.png){width=80%}
 
 ### 4.3.2. Landing Page Mock-up.
 
-<div align="center">
- <img src="assets/img/chapter-iv/Landing.png" width="600" alt="Mock-up del Landing Page de EdgeWatch">
-</div>
+![Mock-up del Landing Page de EdgeWatch](assets/img/chapter-iv/Landing.png){width=80%}
 
 ## 4.4. Web Applications UX/UI Design.
 
 ### 4.4.1. Web Applications Wireframes.
-<div align="center">
- <img src="assets/img/chapter-iv/Wireframe 1.png" width="600" alt="Wireframe de EdgeWatch">
- <img src="assets/img/chapter-iv/Wireframe 2.png" width="600" alt="Wireframe de EdgeWatch">
- <img src="assets/img/chapter-iv/Wireframe 3.png" width="600" alt="Wireframe de EdgeWatch">
- <img src="assets/img/chapter-iv/Wireframe 4.png" width="600" alt="Wireframe de EdgeWatch">
- <img src="assets/img/chapter-iv/Wireframe 5.png" width="600" alt="Wireframe de EdgeWatch">
- <img src="assets/img/chapter-iv/Wireframe 6.png" width="600" alt="Wireframe de EdgeWatch">
- <img src="assets/img/chapter-iv/Wireframe 7.png" width="600" alt="Wireframe de EdgeWatch">
-</div>
+
+![Wireframe 1 de la Web Application](assets/img/chapter-iv/wireframe-1.png){width=80%}
+
+![Wireframe 2 de la Web Application](assets/img/chapter-iv/wireframe-2.png){width=80%}
+
+![Wireframe 3 de la Web Application](assets/img/chapter-iv/wireframe-3.png){width=80%}
+
+![Wireframe 4 de la Web Application](assets/img/chapter-iv/wireframe-4.png){width=80%}
+
+![Wireframe 5 de la Web Application](assets/img/chapter-iv/wireframe-5.png){width=80%}
+
+![Wireframe 6 de la Web Application](assets/img/chapter-iv/wireframe-6.png){width=80%}
+
+![Wireframe 7 de la Web Application](assets/img/chapter-iv/wireframe-7.png){width=80%}
 
 ### 4.4.2. Web Applications Wireflow Diagrams.
 **A. Onboarding y acceso**
@@ -1935,15 +1934,20 @@ ORIGEN --> PCRCOMP
 ```
 
 ### 4.4.3. Web Applications Mock-ups.
-<div align="center">
- <img src="assets/img/chapter-iv/Mockup 1.png" width="600" alt="Wireframe de EdgeWatch">
- <img src="assets/img/chapter-iv/Mockup 2.png" width="600" alt="Wireframe de EdgeWatch">
- <img src="assets/img/chapter-iv/Mockup 3.png" width="600" alt="Wireframe de EdgeWatch">
- <img src="assets/img/chapter-iv/Mockup 4.png" width="600" alt="Wireframe de EdgeWatch">
- <img src="assets/img/chapter-iv/Mockup 5.png" width="600" alt="Wireframe de EdgeWatch">
- <img src="assets/img/chapter-iv/Mockup 6.png" width="600" alt="Wireframe de EdgeWatch">
- <img src="assets/img/chapter-iv/Mockup 7.png" width="600" alt="Wireframe de EdgeWatch">
-</div>
+
+![Mock-up 1 de la Web Application](assets/img/chapter-iv/mockup-1.png){width=80%}
+
+![Mock-up 2 de la Web Application](assets/img/chapter-iv/mockup-2.png){width=80%}
+
+![Mock-up 3 de la Web Application](assets/img/chapter-iv/mockup-3.png){width=80%}
+
+![Mock-up 4 de la Web Application](assets/img/chapter-iv/mockup-4.png){width=80%}
+
+![Mock-up 5 de la Web Application](assets/img/chapter-iv/mockup-5.png){width=80%}
+
+![Mock-up 6 de la Web Application](assets/img/chapter-iv/mockup-6.png){width=80%}
+
+![Mock-up 7 de la Web Application](assets/img/chapter-iv/mockup-7.png){width=80%}
 
 ### 4.4.4. Web Applications User Flow Diagrams.
 **Flujo 1 — Rosa Miranda (Ingeniero de Calidad): sustentar ante el cliente minero que un lote fue recubierto dentro de tolerancias** *(Journey Map 1, 2.3.3)*
@@ -2585,7 +2589,7 @@ Se usa Conventional Commits, ya aplicado en el historial de este informe (`feat(
 | Nomenclatura de clases | PascalCase, coincide con el Ubiquitous Language (2.5) y el diagrama de clases (4.7.1): `SpraySession`, `FaultCase`, `NominalRange`, `QualityCertificate`, nunca sinónimos genéricos como `Record` o `Item` |
 | Acceso a datos | Entity Framework Core con proveedor Pomelo.EntityFrameworkCore.MySql; migraciones versionadas con `dotnet ef migrations` |
 | Inyección de dependencias | Contenedor de DI nativo de ASP.NET Core (`builder.Services.AddScoped<...>()`), sin contenedores de terceros |
-| Pruebas | xUnit + Moq para unitarias; para integración de repositorios se usa una base de datos MySQL de pruebas dedicada (esquema `edgewatch_test`, referenciada por una cadena de conexión propia en CI |
+| Pruebas | xUnit + Moq para unitarias; para integración de repositorios se usa una base de datos MySQL de pruebas dedicada (esquema `edgewatch_test`, referenciada por una cadena de conexión propia en CI). |
 | Documentación de API | Swashbuckle (Swagger/OpenAPI); cada endpoint del Product Backlog (p. ej. `POST /api/v1/spray-sessions`) queda documentado en Swagger UI |
 
 **Frontend (Vue / JavaScript, sin build)**
@@ -2802,54 +2806,52 @@ Durante el Sprint 1, se realizó el despliegue de la landing page del proyecto u
 ## Video About-the-Team.
 
 # Bibliografía
+- AMS. (2025, 21 de marzo). *Planned Component Replacements (PCR) by AMS*. https://amseam.com/pcr/
+
 - Automation World. (2025). *How to solve the hidden risks of paper manufacturing on the factory floor*. https://www.automationworld.com/control/article/55378030/how-to-solve-the-hidden-risks-of-paper-manufacturing-on-the-factory-floor
+
+- Bourgau, P. (2022, March 29). *Step by Step Guide to run your Big Picture Event Storming*. Event Storming Journal. https://www.eventstormingjournal.com/big%20picture/step-by-step-guide-to-run-your-big-picture-event-storming/
+
+- Caterpillar. (2017). *The benefits of following a robust demand planning process for parts* [Documento corporativo]. https://s7d2.scene7.com/is/content/Caterpillar/CM20171106-41515-36760
+
+- CooperAcción. (2025). *Minería en cifras: Concesiones y titulares mineros en el Perú*. CooperAcción. https://cooperaccion.org.pe/
+
+- Dmroeder. (s.f.). *pylogix: Read/write data from Allen Bradley Compact/Control Logix PLCs* [Repositorio de software]. GitHub. https://github.com/dmroeder/pylogix
+
+- Energiminas. (2025). *Aporte y proyección de los proveedores mineros al PBI nacional hacia 2030*. Revista Energiminas. https://energiminas.com/
+
+- Evans, E. (2003). *Domain-driven design: Tackling complexity in the heart of software*. Addison-Wesley.
+
+- Fowler, M. (2006). *Ubiquitous language*. https://martinfowler.com/bliki/UbiquitousLanguage.html
+
+- Gordon England. (s.f.). *Glossary of thermal spray and surface engineering terms*. https://www.gordonengland.co.uk/glossary.htm
 
 - Innovapptive. (2024, 26 de febrero). *Overcoming equipment maintenance challenges in mining industry*. https://www.innovapptive.com/blog/overcoming-equipment-maintenance-challenges-in-mining-industry
 
-- Khan, M. N., Shah, S., & Shamim, T. (2019). *Investigation of operating parameters on high-velocity oxyfuel thermal spray coating quality for aerospace applications. The International Journal of Advanced Manufacturing Technology*, 103, 2677–2690. https://doi.org/10.1007/s00170-019-03696-0
+- International Society of Automation. (2016). *ANSI/ISA-18.2-2016: Management of alarm systems for the process industries*. ISA.
 
-- Malamousi, K., Delibasis, K., & Kamnis, S. (2024). Real-time thermal spray process monitoring using convolution neural network deep learning architectures. *Journal of Thermal Spray Technology*, 33(1), 17–32. https://doi.org/10.1007/s11666-024-01713-7
+- Khan, M. N., Shah, S., & Shamim, T. (2019). *Investigation of operating parameters on high-velocity oxyfuel thermal spray coating quality for aerospace applications*. The International Journal of Advanced Manufacturing Technology, 103, 2677–2690. https://doi.org/10.1007/s00170-019-03696-0
 
-- Mauer, G. (2022). Process diagnostics and control in thermal spray. *Journal of Thermal Spray Technology*, 31(4), 818–828.
+- Malamousi, K., Delibasis, K., & Kamnis, S. (2024). *Real-time thermal spray process monitoring using convolution neural network deep learning architectures*. Journal of Thermal Spray Technology, 33(1), 17–32. https://doi.org/10.1007/s11666-024-01713-7
+
+- Mauer, G. (2022). *Process diagnostics and control in thermal spray*. Journal of Thermal Spray Technology, 31(4), 818–828.
 
 - Ministerio de Energía y Minas. (2026). *Boletín Estadístico Minero: Balance anual 2025*. [Citado en Revista Tecnología Minera]. https://tecnologiaminera.com/noticia/minem-peru-alcanza-us-62848-millones-en-exportaciones-en-2025-1774388279
 
+- ODVA. (2015). *The Common Industrial Protocol (CIP) and the family of CIP networks* (PUB00123R1). https://www.odva.org/wp-content/uploads/2020/06/PUB00123R1_Common-Industrial_Protocol_and_Family_of_CIP_Networks.pdf
+
+- ODVA. (2020). *EtherNet/IP quick start for vendors handbook* (PUB00213R0). https://www.odva.org/wp-content/uploads/2020/05/PUB00213R0_EtherNetIP_Developers_Guide.pdf
+
 - Oerlikon Metco. (2025). *Thermal spray process parameters*. https://www.oerlikon.com/metco/en/solutions-technologies/what-is-thermal-spray/thermal-spray-process-parameters/
+
+- Rockwell Automation. (2019). *Logix 5000 controllers data access: Programming manual* (Publicación 1756-PM020F-EN-P). https://literature.rockwellautomation.com/idc/groups/literature/documents/pm/1756-pm020_-en-p.pdf
+
+- Rockwell Automation. (2025). *Logix 5000 controllers design considerations: Reference manual* (Publicación 1756-RM094N-EN-P). https://literature.rockwellautomation.com/idc/groups/literature/documents/rm/1756-rm094_-en-p.pdf
 
 - Siemens. (2022). *The true cost of downtime 2022*. https://assets.new.siemens.com/siemens/assets/api/uuid:3d606495-dbe0-43e4-80b1-d04e27ada920/dics-b10153-00-7600truecostofdowntime2022-144.pdf
 
-- Springer Nature. (2025). Outlook of Industry 4.0 integrated technologies in thermal spray processes and applications. *Journal of Thermal Spray Technology*. https://doi.org/10.1007/s11666-025-02096-z
+- Springer Nature. (2025). *Outlook of Industry 4.0 integrated technologies in thermal spray processes and applications*. Journal of Thermal Spray Technology. https://doi.org/10.1007/s11666-025-02096-z
 
-- Bourgau, P. (2022, March 29). Step by Step Guide to run your Big Picture Event Storming. Event Storming Journal. https://www.eventstormingjournal.com/big%20picture/step-by-step-guide-to-run-your-big-picture-event-storming/
-
-- AMS. (2025, 21 de marzo). Planned Component Replacements (PCR) by AMS. https://amseam.com/pcr/
-
-- Caterpillar. (2017). The benefits of following a robust demand planning process for parts [Documento corporativo]. https://s7d2.scene7.com/is/content/Caterpillar/CM20171106-41515-36760
-
-- Dmroeder. (s.f.). pylogix: Read/write data from Allen Bradley Compact/Control Logix PLCs [Repositorio de software]. GitHub. https://github.com/dmroeder/pylogix
-
-- Evans, E. (2003). Domain-driven design: Tackling complexity in the heart of software. Addison-Wesley.
-
-- Fowler, M. (2006). Ubiquitous language. https://martinfowler.com/bliki/UbiquitousLanguage.html
-
-- Gordon England. (s.f.). Glossary of thermal spray and surface engineering terms. https://www.gordonengland.co.uk/glossary.htm
-
-- International Society of Automation. (2016). ANSI/ISA-18.2-2016: Management of alarm systems for the process industries. ISA.
-
-- Khan, M. N., Shah, S., & Shamim, T. (2019). Investigation of operating parameters on high-velocity oxyfuel thermal spray coating quality for aerospace applications. The International Journal of Advanced Manufacturing Technology, 103, 2677–2690. https://doi.org/10.1007/s00170-019-03696-0
-
-- Mauer, G. (2022). Process diagnostics and control in thermal spray. Journal of Thermal Spray Technology, 31(4), 818–828.
-
-- ODVA. (2015). The Common Industrial Protocol (CIP) and the family of CIP networks (PUB00123R1). https://www.odva.org/wp-content/uploads/2020/06/PUB00123R1_Common-Industrial_Protocol_and_Family_of_CIP_Networks.pdf
-
-- ODVA. (2020). EtherNet/IP quick start for vendors handbook (PUB00213R0). https://www.odva.org/wp-content/uploads/2020/05/PUB00213R0_EtherNetIP_Developers_Guide.pdf
-
-- Oerlikon Metco. (2025). Thermal spray process parameters. https://www.oerlikon.com/metco/en/solutions-technologies/what-is-thermal-spray/thermal-spray-process-parameters/
-
-- Rockwell Automation. (2019). Logix 5000 controllers data access: Programming manual (Publicación 1756-PM020F-EN-P). https://literature.rockwellautomation.com/idc/groups/literature/documents/pm/1756-pm020_-en-p.pdf
-
-- Rockwell Automation. (2025). Logix 5000 controllers design considerations: Reference manual (Publicación 1756-RM094N-EN-P). https://literature.rockwellautomation.com/idc/groups/literature/documents/rm/1756-rm094_-en-p.pdf
-
-- Yokogawa. (s.f.). Implementing alarm management per the ANSI/ISA-18.2 standard. https://www.yokogawa.com/us/library/resources/media-publications/implementing-alarm-management-per-the-ansi-isa-182-standard-control-engineering/
+- Yokogawa. (s.f.). *Implementing alarm management per the ANSI/ISA-18.2 standard*. https://www.yokogawa.com/us/library/resources/media-publications/implementing-alarm-management-per-the-ansi-isa-182-standard-control-engineering/
 
 # Anexos
