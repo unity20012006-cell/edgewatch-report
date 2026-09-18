@@ -2213,129 +2213,63 @@ PCRCtrl --> PCRApp --> PCRRepo --> DB
 ### 4.7.1. Class Diagrams.
 
 El diagrama de clases traduce los agregados del Event Storming (4.6.1) al modelo de objetos que sustentará la implementación en el Capítulo V.
+Debido a la complejidad del sistema, a la cantidad de Bounded Contexts definidos y a la cantidad de clases por capa de Domain-Driven Design, se muestra el diagrama de clases subdividido para una mejor visualización.
 
-```mermaid
-classDiagram
-class Client {
-  +UUID id
-  +String businessName
-  +String ruc
-  +String segment
-}
-class ManufacturingOrder {
-  +UUID id
-  +String ofCode
-  +Date issueDate
-}
-class WorkOrder {
-  +UUID id
-  +String woCode
-  +String status
-  +Date dueDate
-}
-class ComponentModel {
-  +UUID id
-  +String name
-  +String materialSpec
-  +Integer pcrHours
-}
-class Equipment {
-  +UUID id
-  +String tag
-  +String manufacturer
-  +String model
-}
-class NominalRange {
-  +UUID id
-  +String parameterName
-  +Double minValue
-  +Double maxValue
-  +String unit
-}
-class SpraySession {
-  +UUID id
-  +DateTime startedAt
-  +DateTime closedAt
-  +String status
-  +startSession()
-  +closeSession()
-}
-class TelemetryReading {
-  +UUID id
-  +DateTime timestamp
-  +String parameterName
-  +Double value
-}
-class Deviation {
-  +UUID id
-  +DateTime detectedAt
-  +String parameterName
-  +Double observedValue
-}
-class Alert {
-  +UUID id
-  +String severity
-  +DateTime raisedAt
-  +String status
-  +acknowledge()
-}
-class MachineComponent {
-  +UUID id
-  +String name
-  +String category
-}
-class FaultRule {
-  +UUID id
-  +String faultCode
-  +String conditionExpression
-  +suggestComponent()
-}
-class Diagnosis {
-  +UUID id
-  +DateTime createdAt
-  +String probableCause
-}
-class QualityCertificate {
-  +UUID id
-  +String certificateNumber
-  +DateTime issuedAt
-  +String pdfUrl
-  +generatePdf()
-}
-class FieldServiceRecord {
-  +UUID id
-  +DateTime returnedAt
-  +Integer actualServiceHours
-  +String failureOrigin
-  +compareAgainstPCR()
-}
-class UserAccount {
-  +UUID id
-  +String fullName
-  +String email
-  +String role
-}
+#### Equipment
 
-Client "1" --> "*" WorkOrder
-ManufacturingOrder "1" --> "*" WorkOrder
-ComponentModel "1" --> "*" WorkOrder
-WorkOrder "1" --> "*" SpraySession
-Equipment "1" --> "*" SpraySession
-Equipment "1" --> "*" NominalRange
-SpraySession "1" --> "*" TelemetryReading
-SpraySession "1" --> "*" Deviation
-NominalRange "1" --> "*" Deviation
-Deviation "1" --> "1" Alert
-FaultRule "1" --> "*" Alert
-MachineComponent "1" --> "*" FaultRule
-Alert "1" --> "1" Diagnosis
-MachineComponent "1" --> "*" Diagnosis
-WorkOrder "1" --> "0..1" QualityCertificate
-ComponentModel "1" --> "*" FieldServiceRecord
-SpraySession "1" --> "0..1" FieldServiceRecord
-UserAccount "1" --> "*" SpraySession : registra
-UserAccount "1" --> "*" Alert : atiende
-```
+<img src="assets/img/chapter-iv/class-diagrams/equipment/EdgeWatch_Equipment_Domain.png">
+<img src="assets/img/chapter-iv/class-diagrams/equipment/EdgeWatch_Equipment_Application.png">
+<img src="assets/img/chapter-iv/class-diagrams/equipment/EdgeWatch_Equipment_Interfaces.png">
+<img src="assets/img/chapter-iv/class-diagrams/equipment/EdgeWatch_Equipment_Infrastructure.png">
+
+#### FaultDiagnosis
+<img src="assets/img/chapter-iv/class-diagrams/fault-diagnosis/EdgeWatch_FaultDiagnosis_Domain.png">
+<img src="assets/img/chapter-iv/class-diagrams/fault-diagnosis/EdgeWatch_FaultDiagnosis_Application.png">
+<img src="assets/img/chapter-iv/class-diagrams/fault-diagnosis/EdgeWatch_FaultDiagnosis_Interfaces.png">
+<img src="assets/img/chapter-iv/class-diagrams/fault-diagnosis/EdgeWatch_FaultDiagnosis_Infrastructure.png">
+
+#### ProcessMonitoring
+<img src="assets/img/chapter-iv/class-diagrams/process-monitoring/EdgeWatch_ProcessMonitoring_Domain.png">
+<img src="assets/img/chapter-iv/class-diagrams/process-monitoring/EdgeWatch_ProcessMonitoring_Application.png">
+<img src="assets/img/chapter-iv/class-diagrams/process-monitoring/EdgeWatch_ProcessMonitoring_Interfaces.png">
+<img src="assets/img/chapter-iv/class-diagrams/process-monitoring/EdgeWatch_ProcessMonitoring_Infrastructure.png">
+
+#### Traceability
+<img src="assets/img/chapter-iv/class-diagrams/traceability/EdgeWatch_Traceability_Domain.png">
+<img src="assets/img/chapter-iv/class-diagrams/traceability/EdgeWatch_Traceability_Application.png">
+<img src="assets/img/chapter-iv/class-diagrams/traceability/EdgeWatch_Traceability_Interfaces.png">
+<img src="assets/img/chapter-iv/class-diagrams/traceability/EdgeWatch_Traceability_Infrastructure.png">
+
+#### Reporting
+<img src="assets/img/chapter-iv/class-diagrams/reporting/EdgeWatch_Reporting_Domain.png">
+<img src="assets/img/chapter-iv/class-diagrams/reporting/EdgeWatch_Reporting_Application.png">
+<img src="assets/img/chapter-iv/class-diagrams/reporting/EdgeWatch_Reporting_Interfaces.png">
+<img src="assets/img/chapter-iv/class-diagrams/reporting/EdgeWatch_Reporting_Infrastructure.png">
+
+#### Notifications
+<img src="assets/img/chapter-iv/class-diagrams/notifications/EdgeWatch_Notifications_Domain.png">
+<img src="assets/img/chapter-iv/class-diagrams/notifications/EdgeWatch_Notifications_Application.png">
+<img src="assets/img/chapter-iv/class-diagrams/notifications/EdgeWatch_Notifications_Interfaces.png">
+<img src="assets/img/chapter-iv/class-diagrams/notifications/EdgeWatch_Notifications_Infrastructure.png">
+
+#### Billing
+<img src="assets/img/chapter-iv/class-diagrams/billing/EdgeWatch_Billing_Domain.png">
+<img src="assets/img/chapter-iv/class-diagrams/billing/EdgeWatch_Billing_Application.png">
+<img src="assets/img/chapter-iv/class-diagrams/billing/EdgeWatch_Billing_Interfaces.png">
+<img src="assets/img/chapter-iv/class-diagrams/billing/EdgeWatch_Billing_Infrastructure.png">
+
+#### IAM
+<img src="assets/img/chapter-iv/class-diagrams/iam/EdgeWatch_IAM_Domain.png">
+<img src="assets/img/chapter-iv/class-diagrams/iam/EdgeWatch_IAM_Application.png">
+<img src="assets/img/chapter-iv/class-diagrams/iam/EdgeWatch_IAM_Interfaces.png">
+<img src="assets/img/chapter-iv/class-diagrams/iam/EdgeWatch_IAM_Infrastructure.png">
+
+#### Shared
+<img src="assets/img/chapter-iv/class-diagrams/shared-kernel/EdgeWatch_SharedKernel_Domain.png">
+<img src="assets/img/chapter-iv/class-diagrams/shared-kernel/EdgeWatch_SharedKernel_Application.png">
+<img src="assets/img/chapter-iv/class-diagrams/shared-kernel/EdgeWatch_SharedKernel_Interfaces.png">
+<img src="assets/img/chapter-iv/class-diagrams/shared-kernel/EdgeWatch_SharedKernel_Infrastructure.png">
+
 
 ## 4.8. Database Design.
 
@@ -2343,140 +2277,9 @@ UserAccount "1" --> "*" Alert : atiende
 
 El modelo relacional se despliega sobre MySQL y refleja de forma directa el diagrama de clases de 4.7.1, con tablas puente derivadas de las relaciones muchos-a-muchos implícitas en el dominio.
 
-```mermaid
-erDiagram
-  CLIENT ||--o{ WORK_ORDER : "solicita"
-  MANUFACTURING_ORDER ||--o{ WORK_ORDER : "respalda"
-  COMPONENT_MODEL ||--o{ WORK_ORDER : "especifica"
-  WORK_ORDER ||--o{ SPRAY_SESSION : "agrupa"
-  EQUIPMENT ||--o{ SPRAY_SESSION : "ejecuta"
-  EQUIPMENT ||--o{ NOMINAL_RANGE : "define"
-  SPRAY_SESSION ||--o{ TELEMETRY_READING : "genera"
-  SPRAY_SESSION ||--o{ DEVIATION : "presenta"
-  NOMINAL_RANGE ||--o{ DEVIATION : "referencia"
-  DEVIATION ||--|| ALERT : "dispara"
-  FAULT_RULE ||--o{ ALERT : "clasifica"
-  MACHINE_COMPONENT ||--o{ FAULT_RULE : "asocia"
-  ALERT ||--|| DIAGNOSIS : "produce"
-  MACHINE_COMPONENT ||--o{ DIAGNOSIS : "referencia"
-  WORK_ORDER ||--o| QUALITY_CERTIFICATE : "emite"
-  COMPONENT_MODEL ||--o{ FIELD_SERVICE_RECORD : "define_pcr_para"
-  SPRAY_SESSION ||--o| FIELD_SERVICE_RECORD : "origina"
-  USER_ACCOUNT ||--o{ SPRAY_SESSION : "registra"
-  USER_ACCOUNT ||--o{ ALERT : "atiende"
+<img src="assets/img/chapter-iv/db-diagrams/DatabaseDiagram.png">
 
-  CLIENT {
-    uuid id PK
-    string business_name
-    string ruc
-    string segment
-  }
-  MANUFACTURING_ORDER {
-    uuid id PK
-    string of_code
-    date issue_date
-  }
-  WORK_ORDER {
-    uuid id PK
-    uuid client_id FK
-    uuid manufacturing_order_id FK
-    uuid component_model_id FK
-    string wo_code
-    string status
-    date due_date
-  }
-  COMPONENT_MODEL {
-    uuid id PK
-    string name
-    string material_spec
-    int pcr_hours
-  }
-  EQUIPMENT {
-    uuid id PK
-    string tag
-    string manufacturer
-    string model
-  }
-  NOMINAL_RANGE {
-    uuid id PK
-    uuid equipment_id FK
-    string parameter_name
-    double min_value
-    double max_value
-    string unit
-  }
-  SPRAY_SESSION {
-    uuid id PK
-    uuid work_order_id FK
-    uuid equipment_id FK
-    uuid user_id FK
-    timestamp started_at
-    timestamp closed_at
-    string status
-  }
-  TELEMETRY_READING {
-    uuid id PK
-    uuid spray_session_id FK
-    timestamp reading_at
-    string parameter_name
-    double value
-  }
-  DEVIATION {
-    uuid id PK
-    uuid spray_session_id FK
-    uuid nominal_range_id FK
-    timestamp detected_at
-    double observed_value
-  }
-  ALERT {
-    uuid id PK
-    uuid deviation_id FK
-    uuid fault_rule_id FK
-    uuid acknowledged_by FK
-    string severity
-    string status
-    timestamp raised_at
-  }
-  MACHINE_COMPONENT {
-    uuid id PK
-    string name
-    string category
-  }
-  FAULT_RULE {
-    uuid id PK
-    uuid machine_component_id FK
-    string fault_code
-    string condition_expression
-  }
-  DIAGNOSIS {
-    uuid id PK
-    uuid alert_id FK
-    uuid machine_component_id FK
-    timestamp created_at
-    string probable_cause
-  }
-  QUALITY_CERTIFICATE {
-    uuid id PK
-    uuid work_order_id FK
-    string certificate_number
-    timestamp issued_at
-    string pdf_url
-  }
-  FIELD_SERVICE_RECORD {
-    uuid id PK
-    uuid component_model_id FK
-    uuid spray_session_id FK
-    timestamp returned_at
-    int actual_service_hours
-    string failure_origin
-  }
-  USER_ACCOUNT {
-    uuid id PK
-    string full_name
-    string email
-    string role
-  }
-```
+Para una mejor visualizacion, redimirse a los archivos individuales. 
 
 # Capítulo V: Product Implementation, Validation & Deployment
 ## 5.1. Software Configuration Management.
