@@ -2213,130 +2213,63 @@ PCRCtrl --> PCRApp --> PCRRepo --> DB
 ### 4.7.1. Class Diagrams.
 
 El diagrama de clases traduce los agregados del Event Storming (4.6.1) al modelo de objetos que sustentará la implementación en el Capítulo V.
-Debido a la complejidad del sistema, a la cantidad de Bounded Contexts definidos y a la cantidad de clases por capa de Domain-Driven Design, para e
+Debido a la complejidad del sistema, a la cantidad de Bounded Contexts definidos y a la cantidad de clases por capa de Domain-Driven Design, se muestra el diagrama de clases subdividido para una mejor visualización.
 
-```mermaid
-classDiagram
-class Client {
-  +UUID id
-  +String businessName
-  +String ruc
-  +String segment
-}
-class ManufacturingOrder {
-  +UUID id
-  +String ofCode
-  +Date issueDate
-}
-class WorkOrder {
-  +UUID id
-  +String woCode
-  +String status
-  +Date dueDate
-}
-class ComponentModel {
-  +UUID id
-  +String name
-  +String materialSpec
-  +Integer pcrHours
-}
-class Equipment {
-  +UUID id
-  +String tag
-  +String manufacturer
-  +String model
-}
-class NominalRange {
-  +UUID id
-  +String parameterName
-  +Double minValue
-  +Double maxValue
-  +String unit
-}
-class SpraySession {
-  +UUID id
-  +DateTime startedAt
-  +DateTime closedAt
-  +String status
-  +startSession()
-  +closeSession()
-}
-class TelemetryReading {
-  +UUID id
-  +DateTime timestamp
-  +String parameterName
-  +Double value
-}
-class Deviation {
-  +UUID id
-  +DateTime detectedAt
-  +String parameterName
-  +Double observedValue
-}
-class Alert {
-  +UUID id
-  +String severity
-  +DateTime raisedAt
-  +String status
-  +acknowledge()
-}
-class MachineComponent {
-  +UUID id
-  +String name
-  +String category
-}
-class FaultRule {
-  +UUID id
-  +String faultCode
-  +String conditionExpression
-  +suggestComponent()
-}
-class Diagnosis {
-  +UUID id
-  +DateTime createdAt
-  +String probableCause
-}
-class QualityCertificate {
-  +UUID id
-  +String certificateNumber
-  +DateTime issuedAt
-  +String pdfUrl
-  +generatePdf()
-}
-class FieldServiceRecord {
-  +UUID id
-  +DateTime returnedAt
-  +Integer actualServiceHours
-  +String failureOrigin
-  +compareAgainstPCR()
-}
-class UserAccount {
-  +UUID id
-  +String fullName
-  +String email
-  +String role
-}
+#### Equipment
 
-Client "1" --> "*" WorkOrder
-ManufacturingOrder "1" --> "*" WorkOrder
-ComponentModel "1" --> "*" WorkOrder
-WorkOrder "1" --> "*" SpraySession
-Equipment "1" --> "*" SpraySession
-Equipment "1" --> "*" NominalRange
-SpraySession "1" --> "*" TelemetryReading
-SpraySession "1" --> "*" Deviation
-NominalRange "1" --> "*" Deviation
-Deviation "1" --> "1" Alert
-FaultRule "1" --> "*" Alert
-MachineComponent "1" --> "*" FaultRule
-Alert "1" --> "1" Diagnosis
-MachineComponent "1" --> "*" Diagnosis
-WorkOrder "1" --> "0..1" QualityCertificate
-ComponentModel "1" --> "*" FieldServiceRecord
-SpraySession "1" --> "0..1" FieldServiceRecord
-UserAccount "1" --> "*" SpraySession : registra
-UserAccount "1" --> "*" Alert : atiende
-```
+<img src="assets/img/chapter-iv/class-diagrams/equipment/EdgeWatch_Equipment_Domain.png">
+<img src="assets/img/chapter-iv/class-diagrams/equipment/EdgeWatch_Equipment_Application.png">
+<img src="assets/img/chapter-iv/class-diagrams/equipment/EdgeWatch_Equipment_Interfaces.png">
+<img src="assets/img/chapter-iv/class-diagrams/equipment/EdgeWatch_Equipment_Infrastructure.png">
+
+#### FaultDiagnosis
+<img src="assets/img/chapter-iv/class-diagrams/fault-diagnosis/EdgeWatch_FaultDiagnosis_Domain.png">
+<img src="assets/img/chapter-iv/class-diagrams/fault-diagnosis/EdgeWatch_FaultDiagnosis_Application.png">
+<img src="assets/img/chapter-iv/class-diagrams/fault-diagnosis/EdgeWatch_FaultDiagnosis_Interfaces.png">
+<img src="assets/img/chapter-iv/class-diagrams/fault-diagnosis/EdgeWatch_FaultDiagnosis_Infrastructure.png">
+
+#### ProcessMonitoring
+<img src="assets/img/chapter-iv/class-diagrams/process-monitoring/EdgeWatch_ProcessMonitoring_Domain.png">
+<img src="assets/img/chapter-iv/class-diagrams/process-monitoring/EdgeWatch_ProcessMonitoring_Application.png">
+<img src="assets/img/chapter-iv/class-diagrams/process-monitoring/EdgeWatch_ProcessMonitoring_Interfaces.png">
+<img src="assets/img/chapter-iv/class-diagrams/process-monitoring/EdgeWatch_ProcessMonitoring_Infrastructure.png">
+
+#### Traceability
+<img src="assets/img/chapter-iv/class-diagrams/traceability/EdgeWatch_Traceability_Domain.png">
+<img src="assets/img/chapter-iv/class-diagrams/traceability/EdgeWatch_Traceability_Application.png">
+<img src="assets/img/chapter-iv/class-diagrams/traceability/EdgeWatch_Traceability_Interfaces.png">
+<img src="assets/img/chapter-iv/class-diagrams/traceability/EdgeWatch_Traceability_Infrastructure.png">
+
+#### Reporting
+<img src="assets/img/chapter-iv/class-diagrams/reporting/EdgeWatch_Reporting_Domain.png">
+<img src="assets/img/chapter-iv/class-diagrams/reporting/EdgeWatch_Reporting_Application.png">
+<img src="assets/img/chapter-iv/class-diagrams/reporting/EdgeWatch_Reporting_Interfaces.png">
+<img src="assets/img/chapter-iv/class-diagrams/reporting/EdgeWatch_Reporting_Infrastructure.png">
+
+#### Notifications
+<img src="assets/img/chapter-iv/class-diagrams/notifications/EdgeWatch_Notifications_Domain.png">
+<img src="assets/img/chapter-iv/class-diagrams/notifications/EdgeWatch_Notifications_Application.png">
+<img src="assets/img/chapter-iv/class-diagrams/notifications/EdgeWatch_Notifications_Interfaces.png">
+<img src="assets/img/chapter-iv/class-diagrams/notifications/EdgeWatch_Notifications_Infrastructure.png">
+
+#### Billing
+<img src="assets/img/chapter-iv/class-diagrams/billing/EdgeWatch_Billing_Domain.png">
+<img src="assets/img/chapter-iv/class-diagrams/billing/EdgeWatch_Billing_Application.png">
+<img src="assets/img/chapter-iv/class-diagrams/billing/EdgeWatch_Billing_Interfaces.png">
+<img src="assets/img/chapter-iv/class-diagrams/billing/EdgeWatch_Billing_Infrastructure.png">
+
+#### IAM
+<img src="assets/img/chapter-iv/class-diagrams/iam/EdgeWatch_IAM_Domain.png">
+<img src="assets/img/chapter-iv/class-diagrams/iam/EdgeWatch_IAM_Application.png">
+<img src="assets/img/chapter-iv/class-diagrams/iam/EdgeWatch_IAM_Interfaces.png">
+<img src="assets/img/chapter-iv/class-diagrams/iam/EdgeWatch_IAM_Infrastructure.png">
+
+#### Shared
+<img src="assets/img/chapter-iv/class-diagrams/shared-kernel/EdgeWatch_SharedKernel_Domain.png">
+<img src="assets/img/chapter-iv/class-diagrams/shared-kernel/EdgeWatch_SharedKernel_Application.png">
+<img src="assets/img/chapter-iv/class-diagrams/shared-kernel/EdgeWatch_SharedKernel_Interfaces.png">
+<img src="assets/img/chapter-iv/class-diagrams/shared-kernel/EdgeWatch_SharedKernel_Infrastructure.png">
+
 
 ## 4.8. Database Design.
 
