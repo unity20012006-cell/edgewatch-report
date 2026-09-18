@@ -590,7 +590,7 @@ Entrevistado #1
 |-------|--------------|
 | **Nombre del entrevistado** | David Morales |
 | **Edad** | 24 años |
-| **Screenshot de la entrevista** | [PEGAR CAPTURA DE LA ENTREVISTA AQUÍ] |
+| **Screenshot de la entrevista** | ![image alt](https://github.com/unity20012006-cell/edgewatch-report/blob/4c7b8754d2aac8a877f274e4942271f0e04d1e27/Captura%20de%20pantalla%202026-09-18%20033539.png)  |
 | **Link de la entrevista** | [[Agregar enlace]](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20221b734_upc_edu_pe/IQCApSWsPon_RLsgnBkGd3c3AVApScEenb4n1Ws12sFWqSw?e=SgQJDg&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D) |
 | **Tiempo de inicio y duración** | 00:00 - 11:46 |
 
