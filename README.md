@@ -17,9 +17,9 @@ Docente: Sanchez Seña, Alberto Wilmer
 
 | Código     | Apellidos         | Nombres           |
 |------------|-------------------|-------------------| 
-| u20241b962 | Navarro Aldoradin | Carolina Celeste  |
-| u202315628 | Alvarez Falen     | Esteban Valentino |
-|            | Catacora Tupa     | Jhon Deyner       |
+| U20241b962 | Navarro Aldoradin | Carolina Celeste  |
+| U202315628 | Alvarez Falen     | Esteban Valentino |
+| U202425159 | Catacora Tupa     | Jhon Deyner       |
 |            | Vasquez Laos      | Sebastian Andrews |
 |            | Yopla Romero      | Jonathan Alberto  |
 
@@ -566,8 +566,7 @@ A partir del análisis anterior, WebRunners establece cuatro estrategias con sus
 
 
 - **Estrategia 2. Costo de entrada bajo frente a soluciones intensivas en hardware**  
-  Frente a Tecnar y Oerlikon Metco, cuyas soluciones exigen inversión de capital significativa, EdgeWatch
-- compite por accesibilidad, aprovechando la telemetría que el PLC del equipo ya genera.
+  Frente a Tecnar y Oerlikon Metco, cuyas soluciones exigen inversión de capital significativa, EdgeWatch compite por accesibilidad, aprovechando la telemetría que el PLC del equipo ya genera.  
   **Tácticas**: adoptar un modelo de suscripción mensual por equipo monitoreado, sin inversión inicial en hardware; ofrecer un periodo de prueba operando sobre datos históricos del propio cliente; e integrarse mediante un gateway con API REST que no requiere modificar el PLC ni el software del fabricante del equipo.
 
 
@@ -1473,9 +1472,8 @@ Los Criterios de Aceptación se redactan en formato Gherkin (Given-When-Then), e
 
 El Impact Map de EdgeWatch conecta los objetivos de negocio de WebRunners con los User Personas identificados en la sección 2.3.1, los cambios de comportamiento que se espera provocar en ellos (impacts), los entregables del producto que provocan esos cambios (deliverables) y las User Stories que los materializan. El artefacto se elaboró en UXPressia a partir de las fichas de User Persona previamente creadas en la misma herramienta; a continuación se presenta su contenido y una representación en Mermaid para su lectura dentro del informe.
 
-Los Business Goals cumplen los criterios SMART: son específicos, medibles, alcanzables, relevantes para el modelo de negocio de suscripción de dos segmentos y acotados en el tiempo. Los Actors corresponden a los dos User Personas principales, uno por segmento: **Carlos Quispe**, Ingeniero de Calidad de una empresa de servicio de recubrimiento HVOF (Recuperation Supplier), y **Rocío Mendoza**, Ingeniera de Confiabilidad de una empresa minera (Asset Owner). Cuando un goal requiere un rol secundario del mismo segmento, se indica explícitamente.
+Los Business Goals cumplen los criterios SMART: son específicos, medibles, alcanzables, relevantes para el modelo de negocio de suscripción de dos segmentos y acotados en el tiempo. Los Actors corresponden a los dos User Personas principales, uno por segmento: **Rosa Miranda**, Ingeniera de Calidad de una empresa de servicio de recubrimiento HVOF (Recuperation Supplier), y **Jorge Salinas**, Jefe de Mantenimiento de una planta industrial con línea in-house. Cuando un goal requiere un rol secundario del mismo segmento, se indica explícitamente.
 
-*[Insertar captura del Impact Map elaborado en UXPressia]*
 
 ### Business Goal 1 — Adopción del segmento Recuperation Supplier
 
@@ -2591,7 +2589,7 @@ Se usa Conventional Commits, ya aplicado en el historial de este informe (`feat(
 | Nomenclatura de clases | PascalCase, coincide con el Ubiquitous Language (2.5) y el diagrama de clases (4.7.1): `SpraySession`, `FaultCase`, `NominalRange`, `QualityCertificate`, nunca sinónimos genéricos como `Record` o `Item` |
 | Acceso a datos | Entity Framework Core con proveedor Pomelo.EntityFrameworkCore.MySql; migraciones versionadas con `dotnet ef migrations` |
 | Inyección de dependencias | Contenedor de DI nativo de ASP.NET Core (`builder.Services.AddScoped<...>()`), sin contenedores de terceros |
-| Pruebas | xUnit + Moq para unitarias; para integración de repositorios se usa una base de datos MySQL de pruebas dedicada (esquema `edgewatch_test`, referenciada por una cadena de conexión propia en CI |
+| Pruebas | xUnit + Moq para unitarias; para integración de repositorios se usa una base de datos MySQL de pruebas dedicada (esquema `edgewatch_test`, referenciada por una cadena de conexión propia en CI). |
 | Documentación de API | Swashbuckle (Swagger/OpenAPI); cada endpoint del Product Backlog (p. ej. `POST /api/v1/spray-sessions`) queda documentado en Swagger UI |
 
 **Frontend (Vue / JavaScript, sin build)**
@@ -2808,54 +2806,52 @@ Durante el Sprint 1, se realizó el despliegue de la landing page del proyecto u
 ## Video About-the-Team.
 
 # Bibliografía
+- AMS. (2025, 21 de marzo). *Planned Component Replacements (PCR) by AMS*. https://amseam.com/pcr/
+
 - Automation World. (2025). *How to solve the hidden risks of paper manufacturing on the factory floor*. https://www.automationworld.com/control/article/55378030/how-to-solve-the-hidden-risks-of-paper-manufacturing-on-the-factory-floor
+
+- Bourgau, P. (2022, March 29). *Step by Step Guide to run your Big Picture Event Storming*. Event Storming Journal. https://www.eventstormingjournal.com/big%20picture/step-by-step-guide-to-run-your-big-picture-event-storming/
+
+- Caterpillar. (2017). *The benefits of following a robust demand planning process for parts* [Documento corporativo]. https://s7d2.scene7.com/is/content/Caterpillar/CM20171106-41515-36760
+
+- CooperAcción. (2025). *Minería en cifras: Concesiones y titulares mineros en el Perú*. CooperAcción. https://cooperaccion.org.pe/
+
+- Dmroeder. (s.f.). *pylogix: Read/write data from Allen Bradley Compact/Control Logix PLCs* [Repositorio de software]. GitHub. https://github.com/dmroeder/pylogix
+
+- Energiminas. (2025). *Aporte y proyección de los proveedores mineros al PBI nacional hacia 2030*. Revista Energiminas. https://energiminas.com/
+
+- Evans, E. (2003). *Domain-driven design: Tackling complexity in the heart of software*. Addison-Wesley.
+
+- Fowler, M. (2006). *Ubiquitous language*. https://martinfowler.com/bliki/UbiquitousLanguage.html
+
+- Gordon England. (s.f.). *Glossary of thermal spray and surface engineering terms*. https://www.gordonengland.co.uk/glossary.htm
 
 - Innovapptive. (2024, 26 de febrero). *Overcoming equipment maintenance challenges in mining industry*. https://www.innovapptive.com/blog/overcoming-equipment-maintenance-challenges-in-mining-industry
 
-- Khan, M. N., Shah, S., & Shamim, T. (2019). *Investigation of operating parameters on high-velocity oxyfuel thermal spray coating quality for aerospace applications. The International Journal of Advanced Manufacturing Technology*, 103, 2677–2690. https://doi.org/10.1007/s00170-019-03696-0
+- International Society of Automation. (2016). *ANSI/ISA-18.2-2016: Management of alarm systems for the process industries*. ISA.
 
-- Malamousi, K., Delibasis, K., & Kamnis, S. (2024). Real-time thermal spray process monitoring using convolution neural network deep learning architectures. *Journal of Thermal Spray Technology*, 33(1), 17–32. https://doi.org/10.1007/s11666-024-01713-7
+- Khan, M. N., Shah, S., & Shamim, T. (2019). *Investigation of operating parameters on high-velocity oxyfuel thermal spray coating quality for aerospace applications*. The International Journal of Advanced Manufacturing Technology, 103, 2677–2690. https://doi.org/10.1007/s00170-019-03696-0
 
-- Mauer, G. (2022). Process diagnostics and control in thermal spray. *Journal of Thermal Spray Technology*, 31(4), 818–828.
+- Malamousi, K., Delibasis, K., & Kamnis, S. (2024). *Real-time thermal spray process monitoring using convolution neural network deep learning architectures*. Journal of Thermal Spray Technology, 33(1), 17–32. https://doi.org/10.1007/s11666-024-01713-7
+
+- Mauer, G. (2022). *Process diagnostics and control in thermal spray*. Journal of Thermal Spray Technology, 31(4), 818–828.
 
 - Ministerio de Energía y Minas. (2026). *Boletín Estadístico Minero: Balance anual 2025*. [Citado en Revista Tecnología Minera]. https://tecnologiaminera.com/noticia/minem-peru-alcanza-us-62848-millones-en-exportaciones-en-2025-1774388279
 
+- ODVA. (2015). *The Common Industrial Protocol (CIP) and the family of CIP networks* (PUB00123R1). https://www.odva.org/wp-content/uploads/2020/06/PUB00123R1_Common-Industrial_Protocol_and_Family_of_CIP_Networks.pdf
+
+- ODVA. (2020). *EtherNet/IP quick start for vendors handbook* (PUB00213R0). https://www.odva.org/wp-content/uploads/2020/05/PUB00213R0_EtherNetIP_Developers_Guide.pdf
+
 - Oerlikon Metco. (2025). *Thermal spray process parameters*. https://www.oerlikon.com/metco/en/solutions-technologies/what-is-thermal-spray/thermal-spray-process-parameters/
+
+- Rockwell Automation. (2019). *Logix 5000 controllers data access: Programming manual* (Publicación 1756-PM020F-EN-P). https://literature.rockwellautomation.com/idc/groups/literature/documents/pm/1756-pm020_-en-p.pdf
+
+- Rockwell Automation. (2025). *Logix 5000 controllers design considerations: Reference manual* (Publicación 1756-RM094N-EN-P). https://literature.rockwellautomation.com/idc/groups/literature/documents/rm/1756-rm094_-en-p.pdf
 
 - Siemens. (2022). *The true cost of downtime 2022*. https://assets.new.siemens.com/siemens/assets/api/uuid:3d606495-dbe0-43e4-80b1-d04e27ada920/dics-b10153-00-7600truecostofdowntime2022-144.pdf
 
-- Springer Nature. (2025). Outlook of Industry 4.0 integrated technologies in thermal spray processes and applications. *Journal of Thermal Spray Technology*. https://doi.org/10.1007/s11666-025-02096-z
+- Springer Nature. (2025). *Outlook of Industry 4.0 integrated technologies in thermal spray processes and applications*. Journal of Thermal Spray Technology. https://doi.org/10.1007/s11666-025-02096-z
 
-- Bourgau, P. (2022, March 29). Step by Step Guide to run your Big Picture Event Storming. Event Storming Journal. https://www.eventstormingjournal.com/big%20picture/step-by-step-guide-to-run-your-big-picture-event-storming/
-
-- AMS. (2025, 21 de marzo). Planned Component Replacements (PCR) by AMS. https://amseam.com/pcr/
-
-- Caterpillar. (2017). The benefits of following a robust demand planning process for parts [Documento corporativo]. https://s7d2.scene7.com/is/content/Caterpillar/CM20171106-41515-36760
-
-- Dmroeder. (s.f.). pylogix: Read/write data from Allen Bradley Compact/Control Logix PLCs [Repositorio de software]. GitHub. https://github.com/dmroeder/pylogix
-
-- Evans, E. (2003). Domain-driven design: Tackling complexity in the heart of software. Addison-Wesley.
-
-- Fowler, M. (2006). Ubiquitous language. https://martinfowler.com/bliki/UbiquitousLanguage.html
-
-- Gordon England. (s.f.). Glossary of thermal spray and surface engineering terms. https://www.gordonengland.co.uk/glossary.htm
-
-- International Society of Automation. (2016). ANSI/ISA-18.2-2016: Management of alarm systems for the process industries. ISA.
-
-- Khan, M. N., Shah, S., & Shamim, T. (2019). Investigation of operating parameters on high-velocity oxyfuel thermal spray coating quality for aerospace applications. The International Journal of Advanced Manufacturing Technology, 103, 2677–2690. https://doi.org/10.1007/s00170-019-03696-0
-
-- Mauer, G. (2022). Process diagnostics and control in thermal spray. Journal of Thermal Spray Technology, 31(4), 818–828.
-
-- ODVA. (2015). The Common Industrial Protocol (CIP) and the family of CIP networks (PUB00123R1). https://www.odva.org/wp-content/uploads/2020/06/PUB00123R1_Common-Industrial_Protocol_and_Family_of_CIP_Networks.pdf
-
-- ODVA. (2020). EtherNet/IP quick start for vendors handbook (PUB00213R0). https://www.odva.org/wp-content/uploads/2020/05/PUB00213R0_EtherNetIP_Developers_Guide.pdf
-
-- Oerlikon Metco. (2025). Thermal spray process parameters. https://www.oerlikon.com/metco/en/solutions-technologies/what-is-thermal-spray/thermal-spray-process-parameters/
-
-- Rockwell Automation. (2019). Logix 5000 controllers data access: Programming manual (Publicación 1756-PM020F-EN-P). https://literature.rockwellautomation.com/idc/groups/literature/documents/pm/1756-pm020_-en-p.pdf
-
-- Rockwell Automation. (2025). Logix 5000 controllers design considerations: Reference manual (Publicación 1756-RM094N-EN-P). https://literature.rockwellautomation.com/idc/groups/literature/documents/rm/1756-rm094_-en-p.pdf
-
-- Yokogawa. (s.f.). Implementing alarm management per the ANSI/ISA-18.2 standard. https://www.yokogawa.com/us/library/resources/media-publications/implementing-alarm-management-per-the-ansi-isa-182-standard-control-engineering/
+- Yokogawa. (s.f.). *Implementing alarm management per the ANSI/ISA-18.2 standard*. https://www.yokogawa.com/us/library/resources/media-publications/implementing-alarm-management-per-the-ansi-isa-182-standard-control-engineering/
 
 # Anexos
