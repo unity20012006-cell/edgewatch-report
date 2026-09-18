@@ -1,4 +1,4 @@
-@startuml EdgeWatch_IAM
+@startuml EdgeWatch_IAM_Full
 skinparam packageStyle rectangle
 skinparam classAttributeIconSize 0
 skinparam linetype ortho

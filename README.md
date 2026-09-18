@@ -2213,6 +2213,7 @@ PCRCtrl --> PCRApp --> PCRRepo --> DB
 ### 4.7.1. Class Diagrams.
 
 El diagrama de clases traduce los agregados del Event Storming (4.6.1) al modelo de objetos que sustentará la implementación en el Capítulo V.
+Debido a la complejidad del sistema, a la cantidad de Bounded Contexts definidos y a la cantidad de clases por capa de Domain-Driven Design, para e
 
 ```mermaid
 classDiagram

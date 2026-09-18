@@ -1,4 +1,4 @@
-@startuml EdgeWatch_ProcessMonitoring
+@startuml EdgeWatch_ProcessMonitoring_Full
 skinparam packageStyle rectangle
 skinparam classAttributeIconSize 0
 skinparam linetype ortho

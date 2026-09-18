@@ -1,4 +1,4 @@
-@startuml EdgeWatch_SharedKernel
+@startuml EdgeWatch_SharedKernel_Application
 skinparam packageStyle rectangle
 skinparam classAttributeIconSize 0
 skinparam linetype ortho

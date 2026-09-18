@@ -1,4 +1,4 @@
-@startuml EdgeWatch_Billing
+@startuml EdgeWatch_Billing_Full
 skinparam packageStyle rectangle
 skinparam classAttributeIconSize 0
 skinparam linetype ortho
